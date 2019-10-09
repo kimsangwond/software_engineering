@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  9 OCT 2019 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  9 OCT 2019 18:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -423,7 +423,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-No file SANGWON.aux.
+(./SANGWON.aux)
 \openout1 = `SANGWON.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -440,7 +440,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 13.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 13.
@@ -540,6 +540,13 @@ Underfull \hbox (badness 3826) in paragraph at lines 65--66
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
 
@@ -550,33 +557,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[2
 
-
-
-]
-(./SANGWON.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] (./SANGWON.aux) ) 
 Here is how much of TeX's memory you used:
- 4628 strings out of 492616
- 66650 string characters out of 6129481
- 143295 words of memory out of 5000000
- 8474 multiletter control sequences out of 15000+600000
- 38937 words of font info for 79 fonts, out of 8000000 for 9000
+ 4631 strings out of 492616
+ 66689 string characters out of 6129481
+ 144303 words of memory out of 5000000
+ 8475 multiletter control sequences out of 15000+600000
+ 39583 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,35p,554b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on SANGWON.pdf (1 page, 45684 bytes).
+ 41i,10n,35p,847b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.
+enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SANGWON.pdf (2 pages, 51032 bytes).
 PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 28 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
