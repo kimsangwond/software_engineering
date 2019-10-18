@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  9 OCT 2019 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  10 OCT 2019 11:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -423,7 +423,11 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(./SANGWON.aux)
+(./SANGWON.aux
+
+LaTeX Warning: Label `tab1' multiply defined.
+
+)
 \openout1 = `SANGWON.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -510,8 +514,32 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+Underfull \hbox (badness 5064) in paragraph at lines 43--45
+\OT1/ptm/b/n/9 per agenda, par-tic-i-pated politi-cian, and his state-ments,
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+[]\OT1/ptm/b/it/9 Index Terms\OT1/ptm/b/n/9 ---Politics, Speech, Key-word Anal-
+y-sis,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+\OT1/ptm/b/n/9 Min-utes of Gov-ern-ment Meet-ings, AI Speaker
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
+
+ []
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
@@ -530,12 +558,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--63
  []
 
 
-Underfull \hbox (badness 5245) in paragraph at lines 65--65
+Underfull \hbox (badness 5245) in paragraph at lines 78--78
 []|\OT1/ptm/m/n/8 Sangwon Kim
  []
 
 
-Underfull \hbox (badness 3826) in paragraph at lines 65--66
+Underfull \hbox (badness 3826) in paragraph at lines 78--79
 \OT1/ptm/m/n/8 de-vel-oper to sat-isfy with whole
  []
 
@@ -546,6 +574,76 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+\OT1/ptm/m/it/10 ac-cord-ing to agenda : \OT1/ptm/m/n/10 Users can in-quire
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 130--131
+\OT1/ptm/m/it/10 : \OT1/ptm/m/n/10 users can in-quire about pol-i-tics' in-ter-
+ested
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 133--134
+\OT1/ptm/m/n/10 can be rec-om-mended about pol-i-tics by us-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -557,26 +655,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2
+[3
 
-] (./SANGWON.aux) ) 
+] (./SANGWON.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
  4631 strings out of 492616
  66689 string characters out of 6129481
- 144303 words of memory out of 5000000
+ 144341 words of memory out of 5000000
  8475 multiletter control sequences out of 15000+600000
  39583 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,35p,847b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.
-enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/tex
-live/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SANGWON.pdf (2 pages, 51032 bytes).
+ 41i,10n,35p,847b,287s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/urw/times/utmri8a.pfb>
+Output written on SANGWON.pdf (3 pages, 61909 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 31 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

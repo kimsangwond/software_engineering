@@ -12,7 +12,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{aaaaa \\
+\title{Pesonalized AssemblyMminutes Information Providing Service \\
 }
 \author{\IEEEauthorblockN{Sangwon Kim}
 \IEEEauthorblockA{\textit{dept. information system} \\
@@ -41,11 +41,11 @@ jwalag87@gmail.com}
 \maketitle
 
 \begin{abstract}
-aaaaaaa
+The purpose of our service is to help the general public access easily to assembly minutes. The public will be provided not only minutes but also looking up minutes per agenda, participated politician, and his statements, interested keywords. Through this service, the public can judge politician on real statement, not edited information of media.\linebreak \\
 \end{abstract}
 
 \begin{IEEEkeywords}
-keyword
+Politics, Speech, Keyword Analysis, Minutes of Government Meetings, AI Speaker  \linebreak \\
 \end{IEEEkeywords}
 
   \begin{table}[htbp]
@@ -62,6 +62,19 @@ Customer & SKT & Customers demand to the project to make satisfied with users. C
 \hline
 Software \linebreak Developers& Hyunho Kim \linebreak Kyumin Kim& Software developers are main resources of the the project. Their technical stacks and engineering skills create actual product. They demand core function requirements to Development managers which give them up to their developing process. Their final goal is to satisfy users and customers by realizing close to the requirements. \\
 \hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+  \begin{table}[htbp]
+  \renewcommand{\arraystretch}{1.7}
+\begin{center}
+\begin{tabular}{|p{1.5cm}|p{1.8cm}|p{4.2cm}|}
+\hline
+\textbf{Roles} & \textbf{{Name}}& \textbf{{Task description and etc.}} \\
+\hline
+
 Development \linebreak managers& Sangwon Kim \linebreak Injun Hwang& Development mangers intercommunicate with Customer and Software developer to satisfy with whole stakeholders. They schedule timelines to stick to the project before deadline. They build overall developing design process. So they should figure out what they are confronted by, such as threats and variables, plan projects and direct business matters that Software developers can’t handle with. They support Software developers to focus on developing processes. \\
 \hline
 \end{tabular}
@@ -88,10 +101,41 @@ The AI speaker(Smart speaker) is a kind of wireless speaker, which is activated 
 
 The biggest difference between AI Speaker and typical Speaker is that the AI speaker recognizes “Speech Recognition” to perform specific commands like listening to music, setting alarm and timer, searching information like News, weather, etc. The main input and output unit of Speech-Recognition device is built-in Microphone and Speaker. The AI speaker is consisted of such like these simple units, so it is efficient to send and receive information than any other smartphone, smart TV.
 
-third after writing!
+Accordingly, the biggest advantage of using AI speaker is to order AI something by “Speak some words” when the user is doing some other things on their own hands or can’t type some words through smart device. For example, when the user is on the verge of falling asleep or busy for ready to go out, the user can’t afford to use a smart device. In addition, the old age people cannot afford to read long texts like minutes. So service is suitable for this people.
+
+Specifically, The NUGU speaker is the first Korean-made AI speaker made by SKT in 2016. Over the last two years, The NUGU speaker so far developed a lot so typical functions such as mentioned above are already applied. So our team had to decide to make service that speaker doesn’t provide and groundbreaking service
+
+Third, There is no current services that gather personalized inclined politician or his related field. By lacking of information of politicians, just some specific politicians are reminded to citizens. Though, even if the politician is not popular, some people’s area of interest can be similar to him. Maybe they want to subscribe regularly of that politician.When they want to find information of him, but they will find out that there are only refined, edited version of his mentions. So, based on whole minutes of specific politician’s participated, we will make a interested aria or keyword extraction service through big data analysis. This will be a good method to listen on politician who is similar to user’s interested area by setting up user’s keyword of interested area and scrapping of his activation.
+
+In conclusion, we want to make a  personalized subscribe system of interested politician so the politic can determine of the politician based on objective facts. For this, our team will make service that meet four functions. first, recognizing specific politician’s statements by looking up assembly minutes. second, printing the words through web service and AI speaker. third, the function that finding agenda or politician easily. fourth, a method to listen on politician who is similar to user’s interested area by setting up user’s keyword of interested area and scrapping of his activation. Through this service, It is anticipated that the public’s independence and judgement will be improved.
 
 
+\section{Requirements}
+\subsection{Public}
+The public can be provided with  not only providing information on the minutes of the assembly but also detailed functions of the minutes. They can be provided by inquiring about the minutes of the parliamentary minutes, inquiring agendas involving politicians, inquiring of politicians speech, and inquiring of politicians' keywords of interest.\\ 
 
+\begin{enumerate}
+	\item \textit {Log-in Page:} 
+In the log-in page, the user can saves specific politicians or interested keywords individually. subscribed politician, interested keywords are saved in backend server. through this, the user can uses subscribe or registering functions.\\
+    \begin{enumerate}
+    	\item \textit {Log-in:} Log-in page is a first page that users can see when they enter to our website. These functions will log in a user based on a username and password being matched in a database.\\
+        \item \textit {ID/PW search:} This page is for users who forgot their ID or PW.\\
+    \end{enumerate}
+    
+    \item \textit {Main Page:}  The main page is a key feature of this service. Users can search for detailed information about minutes. To concrete this, the following functions are implemented. \\
+    \begin{enumerate}
+    	\item \textit {Looking up function about meeting contents per agenda :} Users can view agendas by organizing meeting files by agenda\\
+        \item \textit {Looking up function about agenda participating specific politicians :} Users can search agenda in which a specific politician participates.\\
+        \item \textit {Looking up  function about politician’s' speech according to agenda :} Users can inquire politician’s' speech according to agenda\\
+        \item \textit {Looking up function of politics’ interested keyword :} users can inquire about politics’ interested keyword\\
+        \item \textit {subscribing function about concerned politics :} users can subscribe about concerned politics.\
+        \item \textit {ILooking up  function about subscribing politics :} Users can inquire about subscribing politics’ speech\\
+        \item \textit {registering of concerned politics keyword :} Users can be recommended about politics by using concerened keyword\\
+
+
+    \end{enumerate}
+
+\end{enumerate}
 
 
 \end{document}
