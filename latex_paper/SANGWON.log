@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  1 NOV 2019 00:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  1 NOV 2019 00:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -645,10 +645,7 @@ Underfull \hbox (badness 3826) in paragraph at lines 78--79
 \OT1/ptm/m/n/8 de-vel-oper to sat-isfy with whole
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -666,12 +663,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 125--127
 
  []
@@ -806,9 +803,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--152
 Underfull \hbox (badness 10000) in paragraph at lines 133--152
 
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 <fig/g0v.png, id=13, 796.9775pt x 387.4475pt>
 File: fig/g0v.png Graphic file (type png)
@@ -946,7 +940,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--214
 
  []
 
-[4 <./fig/sunlight_foundation.png> <./fig/brigade_media.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 217--219
 \OT1/ptm/m/n/10 The Python Pack-age In-dex(PyPI) con-tains
  []
@@ -956,7 +950,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--219
 
  []
 
-
+[4 <./fig/sunlight_foundation.png> <./fig/brigade_media.jpg>]
 Underfull \hbox (badness 7558) in paragraph at lines 220--222
 \OT1/ptm/m/n/10 also en-ables the de-vel-oper to cre-ate high
  []
@@ -1017,9 +1011,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 226--228
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
@@ -1034,8 +1025,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--287
 
  []
 
-[5 <./fig/git.png>]
-<fig/github.png, id=31, 798.985pt x 419.5675pt>
+<fig/github.png, id=27, 798.985pt x 419.5675pt>
 File: fig/github.png Graphic file (type png)
 <use fig/github.png>
 Package pdftex.def Info: fig/github.png  used on input line 289.
@@ -1045,6 +1035,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 287--294
 
  []
 
+[5 <./fig/git.png>]
 <fig/aws.png, id=32, 1204.5pt x 632.3625pt>
 File: fig/aws.png Graphic file (type png)
 <use fig/aws.png>
@@ -1243,8 +1234,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 384--386
 
  []
 
-[8 <./fig/jdk.png> <./fig/eclipse.png> <./fig/vscode.png> <./fig/elasticsearch.
-png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 389--390
 \OT1/ptm/m/n/10 or in-ter-ested key-words in-di-vid-u-ally. sub-scribed
  []
@@ -1254,6 +1244,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
+[8 <./fig/jdk.png> <./fig/eclipse.png> <./fig/vscode.png> <./fig/elasticsearch.
+png>]
 <fig/1.png, id=63, 925.4575pt x 708.6475pt>
 File: fig/1.png Graphic file (type png)
 <use fig/1.png>
@@ -1339,7 +1331,7 @@ File: fig/3.png Graphic file (type png)
 <use fig/3.png>
 Package pdftex.def Info: fig/3.png  used on input line 421.
 (pdftex.def)             Requested size: 457.207pt x 349.30414pt.
-[9 <./fig/1.png> <./fig/2.png>]
+
 Underfull \hbox (badness 2452) in paragraph at lines 425--426
 \OT1/ptm/m/n/10 list that is clas-si-fied pe-ri-od-i-cally in-cludes
  []
@@ -1354,6 +1346,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
+[9 <./fig/1.png> <./fig/2.png>]
 <fig/4.png, id=71, 1043.9pt x 794.97pt>
 File: fig/4.png Graphic file (type png)
 <use fig/4.png>
@@ -1399,11 +1392,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 453--454
 
  []
 
-[10 <./fig/3.png> <./fig/4.png> <./fig/5.png> <./fig/6.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 454--455
 
  []
 
+[10 <./fig/3.png> <./fig/4.png> <./fig/5.png> <./fig/6.png>]
 <fig/7.png, id=81, 990.70125pt x 753.81625pt>
 File: fig/7.png Graphic file (type png)
 <use fig/7.png>
@@ -1474,7 +1468,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
 
-[11 <./fig/7.png> <./fig/8.png> <./fig/9.png>]
+
+Underfull \vbox (badness 7777) has occurred while \output is active []
+
+ [11 <./fig/7.png> <./fig/8.png> <./fig/9.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 489--490
 \OT1/ptm/m/n/10 Nugu speaker send back most re-cent
  []
@@ -1525,7 +1522,7 @@ exlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on SANGWON.pdf (12 pages, 4478665 bytes).
+Output written on SANGWON.pdf (12 pages, 4478898 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream
