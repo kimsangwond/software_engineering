@@ -1,0 +1,11 @@
+sys==3.7.1
+pyhwp==0.1b12
+pathlib
+dataclasses
+multiprocessing
+typing
+copy
+json
+subprocess
+re
+elasticsearch==6.4.0
