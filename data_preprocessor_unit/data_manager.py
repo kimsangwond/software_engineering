@@ -28,8 +28,8 @@ class FileLoader(DataManager):
         self.init_file(source_path)
 
     def __next__(self):
-        file_name = next(self.files)
-        return file_name
+        file_path = next(self.files)
+        return file_path
 
     def check_argv(self):
         if not len(sys.argv) == 2:
