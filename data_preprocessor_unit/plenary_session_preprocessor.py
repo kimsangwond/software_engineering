@@ -6,7 +6,6 @@ import json
 from data_manager import FileConverter
 
 SOURCE_FILE_EXTENSION = "*.txt"
-RESULT_FILE_EXTENSION = ".json"
 
 @dataclass
 class MeetingLog:
@@ -14,7 +13,7 @@ class MeetingLog:
 
     def __init__(self):
         self.contents = {
-            "_index": str, #대수th_회수round 
+            "_index": str, #대수th_회수round_plenary_session
             "_type": "_doc",
             "_id": int, #차수
             "_source": {
@@ -57,11 +56,11 @@ def construct_data(raw_data:str, log_data: MeetingLog) -> MeetingLog:
 
 def name_json_file(file_path: Path):
     file_name = file_path.name
-    return file_name.replace(".txt","")    
+    return file_name.replace(".txt",".json")    
 
 def export_json(result: list, source_path: Path, output_path: Path):
     file_name = name_json_file(source_path)
-    export_path = output_path/Path(file_name + RESULT_FILE_EXTENSION)
+    export_path = output_path/Path(file_name)
     with export_path.open(mode="a+", encoding="utf-8") as f: 
         for document in result:
             document = asdict(document)
@@ -70,9 +69,8 @@ def export_json(result: list, source_path: Path, output_path: Path):
 
 def construct_result_format(file_path: Path) -> MeetingLog:
     log = MeetingLog()
-    file_name = file_path.name.replace(".txt","")
-    ordianl,_round,time,_ = file_name.split('_')
-    log.contents["_index"] = f"{ordianl}th_{_round}round"
+    ordianl,_round,time,_,_ = file_path.name.split('_')
+    log.contents["_index"] = f"{ordianl}th_{_round}round_plenary_session"
     log.contents["_id"] = time
     return log
 
