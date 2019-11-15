@@ -1,10 +1,8 @@
-sys==3.7.1
+sys
 pyhwp==0.1b12
 pathlib
 dataclasses
 multiprocessing
-typing
-copy
 json
 subprocess
 re
