@@ -11,7 +11,7 @@ def rename_file(file_name: str) -> str:
         file_name = file_name.replace("개회식", "0차")
     number_in_string = re.findall(r"\d+", file_name) 
     # number_in_string = [몇 대 국회인지, 몇 번째 회차인지, 몇 번째 차수인지로 구성이 되어있다.]
-    return f"{number_in_string[0]}_{number_in_string[1]}_{number_in_string[2]}_meetinglog.txt"
+    return f"{number_in_string[0]}_{number_in_string[1]}_{number_in_string[2]}_plenary_session.txt"
 
 def reassign_output_path(output_path: Path, file_name: str) -> str:
     absolute_path = output_path/Path(file_name)

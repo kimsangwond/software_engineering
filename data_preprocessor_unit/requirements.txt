@@ -9,3 +9,4 @@ json
 subprocess
 re
 elasticsearch==6.4.0
+openpyxl==2.5.12
