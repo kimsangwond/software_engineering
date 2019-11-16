@@ -6,7 +6,7 @@ from data_manager import FileConverter
 
 FILE_EXTENSION = "*.hwp"
 
-def rename_file(file_name: str) -> str:
+def rename_plenary_session_file(file_name: str) -> str:
     if "개회식" in file_name:
         file_name = file_name.replace("개회식", "0차")
     number_in_string = re.findall(r"\d+", file_name) 
@@ -17,9 +17,9 @@ def reassign_output_path(output_path: Path, file_name: str) -> str:
     absolute_path = output_path/Path(file_name)
     return absolute_path.resolve()
 
-if __name__=="__main__":
+def convert_plenary_session():
     for source_file,output_path in FileConverter(FILE_EXTENSION):
-        new_file_name = rename_file(source_file.name)
+        new_file_name = rename_plenary_session_file(source_file.name)
         result_path = reassign_output_path(output_path, new_file_name)
         subprocess.run(
             ["hwp5txt", str(source_file.resolve())],
@@ -28,3 +28,10 @@ if __name__=="__main__":
             text=True
         )
     print("finish")
+
+if __name__=="__main__":
+    converter_type = input("컨버터의 유형을 선택하세요:\n")
+    if converter_type == "plenary_session":
+        convert_plenary_session()
+    else:
+        raise KeyError("잘못된 컨버터 유형을 선택하셨습니다.")
