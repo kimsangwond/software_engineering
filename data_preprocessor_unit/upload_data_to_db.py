@@ -42,7 +42,7 @@ class Uploader:
     def extract_index(self):
         pass
 
-    def bulk_new_index(self, index_name: str):
+    def bulk_new_index(self, index_name: str, body_name: dict):
         ElasticsearchAPI.create_index(index_name, body_name)
         ElasticsearchAPI.data_bulk(self.file_path)
 
@@ -87,5 +87,5 @@ if __name__=="__main__":
                 CongressMemberListUploader.run(file_path)
         elif "plenary_session" in file_name_type:
             if file_name_type in file_path.name:
-                MeetingLogUploader.run(file_path)
+                PlenarySessionUploader.run(file_path)
     print("finish")

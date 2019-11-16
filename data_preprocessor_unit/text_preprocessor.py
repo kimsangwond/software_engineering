@@ -8,7 +8,7 @@ from data_manager import FileConverter
 SOURCE_FILE_EXTENSION = "*.txt"
 
 @dataclass
-class MeetingLog:
+class PlenarySessionLog:
     contents: dict  
 
     def __init__(self):
@@ -17,9 +17,25 @@ class MeetingLog:
             "_type": "_doc",
             "_id": int, #차수
             "_source": {
-                "meeting_log": list()
+                "dialogue": list()
             }
         }
+
+class PlenarySessionPreProcessor:
+    @classmethod
+    def construct_plenary_session_format(cls, file_path: Path) -> PlenarySessionLog:
+        log = PlenarySessionLog()
+        ordianl,_round,time,_,_ = file_path.name.split('_')
+        log.contents["_index"] = f"{ordianl}th_{_round}round_plenary_session"
+        log.contents["_id"] = time
+        return log
+
+    @classmethod
+    def process_plenary_session(cls, file_path: Path, output_path: Path):
+        result = cls.construct_plenary_session_format(file_path)
+        for plenary_session_log in construct_data(file_path):
+            result.contents["_source"]["dialogue"].append(plenary_session_log)
+        export_json(result, file_path, output_path)
 
 def parse_agenda_list(agendas: str) -> list:
     return [agenda for agenda in agendas.split("\n") if agenda]
@@ -45,14 +61,13 @@ def extract_data(raw_data: str) -> tuple:
         else:
             temporary_discussion_paragraph.extend(discussion) #토론만 들어있다.
 
-def construct_data(raw_data:str, log_data: MeetingLog) -> MeetingLog:
-    for agenda_list, discussion_paragraph in extract_data(raw_data):
+def construct_data(file_path: Path) -> dict:
+    for agenda_list, discussion_paragraph in extract_data(file_path.read_text()):
         meeting_log = {
             "agenda": agenda_list,
             "discussion": discussion_paragraph
         }
-        log_data.contents["_source"]["meeting_log"].append(meeting_log)
-        yield log_data
+        yield meeting_log
 
 def name_json_file(file_path: Path):
     file_name = file_path.name
@@ -62,24 +77,20 @@ def export_json(result: list, source_path: Path, output_path: Path):
     file_name = name_json_file(source_path)
     export_path = output_path/Path(file_name)
     with export_path.open(mode="a+", encoding="utf-8") as f: 
-        for document in result:
-            document = asdict(document)
-            index = json.dump(document["contents"], fp=f, ensure_ascii=False)
-            f.write("\n")
+        document = asdict(result)
+        index = json.dump(document["contents"], fp=f, ensure_ascii=False)
 
-def construct_result_format(file_path: Path) -> MeetingLog:
-    log = MeetingLog()
-    ordianl,_round,time,_,_ = file_path.name.split('_')
-    log.contents["_index"] = f"{ordianl}th_{_round}round_plenary_session"
-    log.contents["_id"] = time
-    return log
-
-def job(file_path: Path, output_path: Path):
-    log = construct_result_format(file_path)
-    result = [meeting_log for meeting_log in construct_data(file_path.read_text(), log)]
-    export_json(result, file_path, output_path)
+def run_plenary_session_preprocessor():
+    with Pool() as mp:
+        mp.starmap(
+            PlenarySessionPreProcessor.process_plenary_session, 
+            FileConverter(SOURCE_FILE_EXTENSION)
+        )
+    print("finish")
 
 if __name__=="__main__":
-    with Pool() as mp:
-        mp.starmap(job, FileConverter(SOURCE_FILE_EXTENSION))
-    print("finish")
+    preprocessor_type = input("전처리기의 유형을 선택하세요:\n")
+    if preprocessor_type == "plenary_session":
+        run_plenary_session_preprocessor()
+    else:
+        raise KeyError("잘못된 전처리기 유형을 선택하셨습니다.")
