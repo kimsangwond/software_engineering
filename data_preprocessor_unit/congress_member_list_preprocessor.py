@@ -4,7 +4,7 @@ import re
 import json
 from dataclasses import *
 
-from data_manager import FileConverter
+from file_manager import FileConverter
 
 FILE_EXTENSION = "*.xlsx"
 

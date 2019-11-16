@@ -2,9 +2,7 @@ import subprocess
 import re
 from pathlib import Path
 
-from data_manager import FileConverter
-
-FILE_EXTENSION = "*.hwp"
+from file_manager import FileConverter
 
 def rename_plenary_session_file(file_name: str) -> str:
     if "개회식" in file_name:
@@ -18,7 +16,8 @@ def reassign_output_path(output_path: Path, file_name: str) -> str:
     return absolute_path.resolve()
 
 def convert_plenary_session():
-    for source_file,output_path in FileConverter(FILE_EXTENSION):
+    pattern = "*국회본회의*"
+    for source_file,output_path in FileConverter(pattern):
         new_file_name = rename_plenary_session_file(source_file.name)
         result_path = reassign_output_path(output_path, new_file_name)
         subprocess.run(

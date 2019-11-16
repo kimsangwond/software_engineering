@@ -3,9 +3,7 @@ from pathlib import Path
 from multiprocessing.pool import Pool
 import json
 
-from data_manager import FileConverter
-
-SOURCE_FILE_EXTENSION = "*.txt"
+from file_manager import FileConverter
 
 @dataclass
 class PlenarySessionLog:
@@ -80,17 +78,18 @@ def export_json(result: list, source_path: Path, output_path: Path):
         document = asdict(result)
         index = json.dump(document["contents"], fp=f, ensure_ascii=False)
 
-def run_plenary_session_preprocessor():
+def run_preprocessor(partial_file_name: str, klass):
+    pattern = "*" + partial_file_name + "*"
     with Pool() as mp:
         mp.starmap(
-            PlenarySessionPreProcessor.process_plenary_session, 
-            FileConverter(SOURCE_FILE_EXTENSION)
+            klass.process_plenary_session, 
+            FileConverter(pattern)
         )
     print("finish")
 
 if __name__=="__main__":
     preprocessor_type = input("전처리기의 유형을 선택하세요:\n")
     if preprocessor_type == "plenary_session":
-        run_plenary_session_preprocessor()
+        run_preprocessor(preprocessor_type, PlenarySessionPreProcessor)
     else:
         raise KeyError("잘못된 전처리기 유형을 선택하셨습니다.")

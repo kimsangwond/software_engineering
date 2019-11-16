@@ -2,15 +2,13 @@ from elasticsearch import Elasticsearch, helpers
 from pathlib import Path
 import json
 
-from data_manager import FileUploader
+from file_manager import FileLoader
 from config import (
     HOST, 
     PORT, 
     CONGRESS_MEMBER_LIST_INDEX_BODY, 
     PLENARY_SESSION_INDEX_BODY
 )
-
-SOURCE_FILE_EXTENSION = "*.json"
 
 class ElasticsearchAPI:
 
@@ -80,12 +78,17 @@ class CongressMemberListUploader(Uploader):
         else:
             klass.bulk_new_index(current_index, CONGRESS_MEMBER_LIST_INDEX_BODY)
 
-if __name__=="__main__":
-    for file_path, file_name_type in FileUploader(SOURCE_FILE_EXTENSION):
-        if "congress_member_list" in file_name_type:
-            if file_name_type in file_path.name:
-                CongressMemberListUploader.run(file_path)
-        elif "plenary_session" in file_name_type:
-            if file_name_type in file_path.name:
-                PlenarySessionUploader.run(file_path)
+def upload_data(partial_file_name: str, klass):
+    pattern = "*" + partial_file_name + "*"
+    for file_path in FileLoader(pattern):
+        klass.run(file_path)
     print("finish")
+
+if __name__=="__main__":
+    uploader_type = input("업로드할 유형의 파일을 선택해주세요:\n")
+    if "congress_member_list" == uploader_type:
+        upload_data(uploader_type, CongressMemberListUploader)
+    elif "plenary_session" == uploader_type:
+        upload_data(uploader_type, PlenarySessionUploader)
+    else:
+        KeyError("업로드할 유형의 파일을 잘못 적었습니다.")
