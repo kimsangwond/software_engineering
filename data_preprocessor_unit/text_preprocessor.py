@@ -39,8 +39,19 @@ def parse_agenda_list(agendas: str) -> list:
     return [agenda for agenda in agendas.split("\n") if agenda]
 
 def parse_data(raw_data: str) -> tuple:
+    #전자투표 또는 참석자 명단 뒷 부분 제거
+    if "산회" in raw_data:
+        #개회식이 아닌 경우
+        splited_data = raw_data.split("산회)")
+        raw_data = splited_data[0]
+    elif "폐식" in raw_data:
+        #개회식인 경식
+        splited_data = raw_data.split("폐식)")
+        raw_data = splited_data[0]
+    #안건 및 토의 단락별로 나누기
     data = raw_data.replace("\n\n","").split("<그림>")
     for agenda_discussion_paragraph in data:
+        #발화자가 말하는 단락 별로 나누기
         if "◯" in agenda_discussion_paragraph:
             paragraph_contents = agenda_discussion_paragraph.split("◯")
             agenda_list = parse_agenda_list(paragraph_contents[0])
@@ -60,7 +71,7 @@ def extract_data(raw_data: str) -> tuple:
             temporary_discussion_paragraph.extend(discussion) #토론만 들어있다.
 
 def construct_data(file_path: Path) -> dict:
-    for agenda_list, discussion_paragraph in extract_data(file_path.read_text()):
+    for agenda_list, discussion_paragraph in extract_data(file_path.read_text(encoding="utf-8")):
         meeting_log = {
             "agenda": agenda_list,
             "discussion": discussion_paragraph
