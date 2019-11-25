@@ -38,7 +38,7 @@ class PlenarySessionPreProcessor:
 def parse_agenda_list(agendas: str) -> list:
     return [agenda for agenda in agendas.split("\n") if agenda]
 
-def parse_data(raw_data: str) -> tuple:
+def remove_tail_part_in_text(raw_data: str) -> str:
     #전자투표 또는 참석자 명단 뒷 부분 제거
     if "산회" in raw_data:
         #개회식이 아닌 경우
@@ -48,6 +48,11 @@ def parse_data(raw_data: str) -> tuple:
         #개회식인 경식
         splited_data = raw_data.split("폐식)")
         raw_data = splited_data[0]
+    return raw_data
+
+def parse_data(raw_data: str) -> tuple:
+    #전자투표 또는 참석자 명단 뒷 부분 제거
+    raw_data = remove_tail_part_in_text(raw_data)
     #안건 및 토의 단락별로 나누기
     data = raw_data.replace("\n\n","").split("<그림>")
     for agenda_discussion_paragraph in data:
@@ -58,12 +63,18 @@ def parse_data(raw_data: str) -> tuple:
             discussion_paragraph = paragraph_contents[1:]
             yield (agenda_list, discussion_paragraph)
 
+def is_discussion_stop(agenda: str) -> bool:
+    if '마이크 중단' in agenda:
+        return False
+    else:
+        return True
+
 def extract_data(raw_data: str) -> tuple:
     temporary_discussion_paragraph = list()## 발언 초과로 인해 잘리는 경우를 위해서
     temporary_agenda_list = list()
     for agenda_discussion_paragraph in parse_data(raw_data):
         agenda_list,discussion = agenda_discussion_paragraph
-        if agenda_list:
+        if agenda_list and all(map(is_discussion_stop,agenda_list)):
             temporary_agenda_list = agenda_list # 안건들이 들어있다.
             temporary_discussion_paragraph = discussion # 안건에 대한 토론 내용이 담겨있다.
             yield (temporary_agenda_list, temporary_discussion_paragraph)
