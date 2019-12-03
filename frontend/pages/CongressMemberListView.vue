@@ -4,7 +4,7 @@
             <ordinal-list @interface="setSelectedOrdinal"></ordinal-list>
         </div>
         <div class="col-md-10 offset-md-1 mt-4" v-if="selectedOrdinal">
-            <h2 class="pb-3">{{ selectedOrdinal }}회차별 회의록 리스트</h2>
+            <h2 class="pb-3">{{ selectedOrdinal }}대 국회의원 명단</h2>
             <congress-member-list :selectedOrdinal="selectedOrdinal" :searchType="searchType"></congress-member-list>
         </div>
     </div>

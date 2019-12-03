@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="mt-4 col-sm-10 offset-sm-1">
+      <h2 class="mb-5">구독중인 국회의원 명단</h2>
       <b-card-group deck>
         <b-card 
           v-for="congressMember in subcribedCongressMemberList" 
@@ -7,6 +8,7 @@
           :header="congressMember.name"
           bg-variant="light" 
           class="text-center"
+          style="max-width: 20rem"
         >
             <b-card-text>
             {{ congressMember.name }}
@@ -20,16 +22,9 @@
 <script>
   export default {
     layout: 'HeaderLayout',
-    data: function() {
-      return {
-        subcribedCongressMemberList: [
-          {
-            name:'정영진'
-          },
-          {
-            name:'문희상'
-          }
-        ]
+    computed: {
+      subcribedCongressMemberList: function() {
+        return this.$store.state.subcribedCongressMemberList
       }
     }
   }
