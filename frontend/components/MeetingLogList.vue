@@ -12,9 +12,10 @@
                 <b-card-body>
                     <b-list-group>
                         <b-list-group-item 
-                            :to="{path: 'ViewDialouge', query: { type : searchType, ordinal: selectedOrdinal, round: meetingLogs.round, time: meetingLog.time }}" 
                             v-for="meetingLog in meetingLogs.dialogue" 
-                            :key="meetingLog.time">
+                            :key="meetingLog.time"
+                            @click="onSearch(meetingLogs.round, meetingLog.time)"
+                            >
                             {{ meetingLog.text }}
                         </b-list-group-item>
                     </b-list-group>
@@ -28,71 +29,40 @@
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
         props: [
             'selectedOrdinal', 
             'searchType'    
         ],
-        data: function() {
-            return {
-                meetingLogsList: [
-                    {
-                        "round": 1,
-                        "text": "제1회",
-                        "dialogue": [
-                            {
-                                "time":  1,
-                                "text": "제1차"
-                            },
-                            {
-                                "time": 2,
-                                "text": "제2차"
-                            }
-                        ]                        
-                    },
-                    {
-                        "round": 2,
-                        "text": "제2회",
-                        "dialogue": [
-                            {
-                                "time": 1,
-                                "text": "제1차"
-                            }
-                        ]
+        watch: {
+            async selectedOrdinal() {
+                this.meetingLogsList = await axios.get('/getMeetingLogsList', {
+                    params: {
+                        ordinal: this.selectedOrdinal,
                     }
-            ]                
+                })
             }
         },
-        watch: {
-            selectedOrdinal: function() {
-                this.meetingLogsList = [
-                        {
-                            "round": 1,
-                            "text": "제1회",
-                            "dialogue": [
-                                {
-                                    "time":  1,
-                                    "text": "제1차"
-                                }
-                            ]                        
-                        },
-                        {
-                            "round": 2,
-                            "text": "제2회",
-                            "dialogue": [
-                                {
-                                    "time": 1,
-                                    "text": "제1차"
-                                },
-                                {
-                                    "time": 2,
-                                    "text": "제2차"
-                                }
-                            ]
-                        }
-                    ]
-                
-            }
+        methods: {
+            async onSearch(round, time) {
+                axios.get('/searchMeetingLog', {
+                    params: { 
+                        type : this.searchType, 
+                        ordinal: this.selectedOrdinal, 
+                        round: round, 
+                        time: time
+                    }
+                }).then((res) => {
+                    this.$router.push('ViewDialogue',
+                    params={
+                        meetingLog: res.data
+                    })                    
+                }
+
+                )
+            },
         }
-    }      
+    }
 </script>

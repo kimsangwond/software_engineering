@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <Header/>
-            <div class="contents">
-                <nuxt/>
-            </div>
+                <div class="contents">
+                    <nuxt/>
+                </div>
             </div>
         </div>
     </div>
@@ -20,3 +20,13 @@
         }
     }
 </script>
+
+<style>
+    body {
+        background: url('../assets/background-image.jpeg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+</style>
