@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  4 DEC 2019 21:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  5 DEC 2019 01:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -556,13 +556,16 @@ LaTeX Warning: Label `fig' multiply defined.
 LaTeX Warning: Label `fig' multiply defined.
 
 
-LaTeX Warning: Label `fig' multiply defined.
-
-
-LaTeX Warning: Label `fig' multiply defined.
+LaTeX Warning: Label `tab1' multiply defined.
 
 
 LaTeX Warning: Label `tab1' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
 
 
 LaTeX Warning: Label `fig' multiply defined.
@@ -1509,417 +1512,492 @@ Underfull \hbox (badness 10000) in paragraph at lines 589--590
  []
 
 [14 <./fig/8.png> <./fig/9.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 595--596
+Underfull \hbox (badness 2538) in paragraph at lines 596--599
+\OT1/ptm/m/n/10 ad-van-tages be-cause REST uses ba-sic pre-ex-is-tence web
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--599
+
+ []
+
+
+Underfull \hbox (badness 2042) in paragraph at lines 599--601
+[]\OT1/ptm/m/it/10 Frontend: \OT1/ptm/m/n/10 First mod-ule is front-end. Throug
+h our
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--601
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--602
+
+ []
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 602--603
+[]\OT1/ptm/m/it/10 NUGU speaker: \OT1/ptm/m/n/10 Sec-ond is NUGU speaker.
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 602--603
+\OT1/ptm/m/n/10 Through this speaker, user can be pro-vided
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 602--603
+\OT1/ptm/m/n/10 our func-tion: Search-ing par-tic-i-pated meet-ings,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
+
+ []
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 605--606
+[]\OT1/ptm/m/it/10 Database: \OT1/ptm/m/n/10 Third mod-ule is DB. Database can 
+be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
 <fig/6_1.png, id=100, 805.5696pt x 446.6286pt>
 File: fig/6_1.png Graphic file (type png)
 <use fig/6_1.png>
-Package pdftex.def Info: fig/6_1.png  used on input line 598.
+Package pdftex.def Info: fig/6_1.png  used on input line 612.
 (pdftex.def)             Requested size: 402.78381pt x 223.31375pt.
 <fig/6_2.png, id=101, 392.1852pt x 452.4102pt>
 File: fig/6_2.png Graphic file (type png)
 <use fig/6_2.png>
-Package pdftex.def Info: fig/6_2.png  used on input line 605.
+Package pdftex.def Info: fig/6_2.png  used on input line 618.
 (pdftex.def)             Requested size: 313.74858pt x 361.92865pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
+[]\OT1/ptm/m/n/10 Our di-rec-tory or-ga-ni-za-tion is com-prised of
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
+\OT1/ptm/m/n/10 three part: Parser, Web-frontend, Back-end. These
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
+\OT1/ptm/m/n/10 di-rec-tory is up-loaded in our github ad-dress,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 []|\OT1/ptm/b/n/8 Module
  []
 
 
-Overfull \hbox (5.73935pt too wide) in paragraph at lines 620--620
-[]|[]| 
+Overfull \hbox (5.73935pt too wide) in paragraph at lines 634--634
+[]|\OT1/ptm/m/n/8 /data[]preprocessor[]unit| 
  []
 
 
-Overfull \hbox (3.99593pt too wide) in paragraph at lines 621--621
+Overfull \hbox (12.53183pt too wide) in paragraph at lines 635--635
 []|\OT1/ptm/m/n/8 congress[]member[]list[]preprocessor.py| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 629--630
-[]|\OT1/ptm/m/n/8 Web
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
-[]|\OT1/ptm/m/n/8 Web
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
-[]|\OT1/ptm/m/n/8 Web
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
-[]|\OT1/ptm/m/n/8 Web
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 653--654
-[]|\OT1/ptm/m/n/8 Web
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 656--657
-[]|\OT1/ptm/m/n/8 Web
- []
-
-
-Overfull \hbox (7.53152pt too wide) in paragraph at lines 616--661
+Overfull \hbox (4.6861pt too wide) in paragraph at lines 630--688
  [] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15 <./fig/6_1.png> <./fig/6_2.png>]
-<fig/6_4.png, id=107, 416.2752pt x 283.7802pt>
-File: fig/6_4.png Graphic file (type png)
-<use fig/6_4.png>
-Package pdftex.def Info: fig/6_4.png  used on input line 667.
-(pdftex.def)             Requested size: 208.13708pt x 141.88974pt.
-<fig/6_5.png, id=108, 345.6915pt x 452.28975pt>
-File: fig/6_5.png Graphic file (type png)
-<use fig/6_5.png>
-Package pdftex.def Info: fig/6_5.png  used on input line 674.
-(pdftex.def)             Requested size: 172.84532pt x 226.14432pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 680--684
-
+Underfull \hbox (badness 10000) in paragraph at lines 698--698
+[]|\OT1/ptm/m/n/8 m2e-wtp/web-resources/META-
  []
 
 
-Overfull \vbox (2226.67548pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 709--709
+[]|\OT1/ptm/m/n/8 backend/src/main/
+ []
 
 
-[16 <./fig/6_4.png> <./fig/6_5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 691--692
+Overfull \hbox (5.5153pt too wide) in paragraph at lines 713--713
+\OT1/ptm/m/n/8 org/factfinder/controller| 
+ []
+
+
+Overfull \hbox (2.63522pt too wide) in paragraph at lines 718--718
+[]|\OT1/ptm/m/n/8 backend/src/main/java/
+ []
+
+
+Overfull \hbox (2.63522pt too wide) in paragraph at lines 721--721
+[]|\OT1/ptm/m/n/8 backend/src/main/java/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 724--724
+[]|\OT1/ptm/m/n/8 backend/src/main/
+ []
+
+
+Overfull \hbox (4.87244pt too wide) in paragraph at lines 730--731
+[]|\OT1/ptm/m/n/8 documentation| 
+ []
+
+
+Overfull \hbox (4.68608pt too wide) in paragraph at lines 694--735
+ [] 
+ []
+
+<fig/6_4.png, id=102, 416.2752pt x 283.7802pt>
+File: fig/6_4.png Graphic file (type png)
+<use fig/6_4.png>
+Package pdftex.def Info: fig/6_4.png  used on input line 742.
+(pdftex.def)             Requested size: 208.13708pt x 141.88974pt.
+<fig/6_5.png, id=103, 345.6915pt x 452.28975pt>
+File: fig/6_5.png Graphic file (type png)
+<use fig/6_5.png>
+Package pdftex.def Info: fig/6_5.png  used on input line 749.
+(pdftex.def)             Requested size: 172.84532pt x 226.14432pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--758
+
+ []
+
+[15 <./fig/6_1.png> <./fig/6_2.png>] [16 <./fig/6_4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
 []\OT1/ptm/m/it/10 Reusing codes through com-po-nents.:
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 691--692
+Underfull \hbox (badness 1389) in paragraph at lines 765--766
 \OT1/ptm/m/n/10 Com-po-nents means the block that can be
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 691--692
+Underfull \hbox (badness 1521) in paragraph at lines 765--766
 \OT1/ptm/m/n/10 com-po-nents, the de-vel-op-ers can im-ple-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--692
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
 \OT1/ptm/m/n/10 the com-po-nents is im-por-tant in Vue.js
  []
 
 
-Underfull \hbox (badness 4779) in paragraph at lines 691--692
+Underfull \hbox (badness 4779) in paragraph at lines 765--766
 \OT1/ptm/m/n/10 Frame-work and the way of cre-ation of
  []
 
 
-Underfull \hbox (badness 2409) in paragraph at lines 691--692
+Underfull \hbox (badness 2409) in paragraph at lines 765--766
 \OT1/ptm/m/n/10 com-po-nents de-ter-mines Vue.js's de-vel-op-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--692
+Underfull \hbox (badness 10000) in paragraph at lines 765--766
 
  []
 
-
-Underfull \vbox (badness 6396) has occurred while \output is active []
-
- [17]
-Underfull \hbox (badness 4886) in paragraph at lines 696--697
+[17 <./fig/6_5.png>]
+Underfull \hbox (badness 4886) in paragraph at lines 770--771
 []\OT1/ptm/m/it/10 The UI ren-der-ing makes ab-strac-tions of
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 696--697
+Underfull \hbox (badness 1735) in paragraph at lines 770--771
 \OT1/ptm/m/it/10 client/server dis-tri-bu-tion. Just by in-stalling
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 701--702
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
 []\OT1/ptm/m/it/10 Location of Source Code:  \OT1/ptm/m/n/10 soft-ware en-gi-ne
 er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 701--702
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
 
  []
 
 
-Underfull \hbox (badness 1817) in paragraph at lines 706--707
+Underfull \hbox (badness 1817) in paragraph at lines 780--781
 \OT1/ptm/m/n/10 makes and set up the projects au-to-mat-i-cally.
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 706--707
+Underfull \hbox (badness 1383) in paragraph at lines 780--781
 \OT1/ptm/m/n/10 It gath-ers Web-pack, the pack-age that gath-ers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--707
+Underfull \hbox (badness 10000) in paragraph at lines 780--781
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
+Underfull \hbox (badness 10000) in paragraph at lines 781--782
 
  []
 
 
-Underfull \hbox (badness 5592) in paragraph at lines 709--710
+Underfull \hbox (badness 5592) in paragraph at lines 783--784
 []\OT1/ptm/m/it/10 Where it is taken from:  \OT1/ptm/m/n/10 Vue.js is de-vel-op
 ed
  []
 
 
-Underfull \hbox (badness 5316) in paragraph at lines 709--710
+Underfull \hbox (badness 5316) in paragraph at lines 783--784
 \OT1/ptm/m/n/10 by Evan You, who used An-gu-larJS in var-i-ous
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 709--710
+Underfull \hbox (badness 10000) in paragraph at lines 783--784
 
  []
 
 
-Underfull \hbox (badness 2961) in paragraph at lines 710--711
+Underfull \hbox (badness 2961) in paragraph at lines 784--785
 \OT1/ptm/m/n/10 pro-duc-tiv-ity of Vue.js tech-nique. We uses Vue.js
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 710--711
+Underfull \hbox (badness 2012) in paragraph at lines 784--785
 \OT1/ptm/m/n/10 Our cur-rent project have to im-ple-ment four core
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 710--711
+Underfull \hbox (badness 2103) in paragraph at lines 784--785
 \OT1/ptm/m/n/10 func-tions and NUGU speaker func-tion. Our team
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
+Underfull \hbox (badness 10000) in paragraph at lines 784--785
 
  []
 
 <fig/6_7.png, id=117, 492.03825pt x 331.83975pt>
 File: fig/6_7.png Graphic file (type png)
 <use fig/6_7.png>
-Package pdftex.def Info: fig/6_7.png  used on input line 716.
+Package pdftex.def Info: fig/6_7.png  used on input line 790.
 (pdftex.def)             Requested size: 246.01852pt x 165.91946pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--724
+Underfull \hbox (badness 10000) in paragraph at lines 796--797
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--802
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--805
 
  []
 
 [18 <./fig/6_7.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 728--729
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
+Underfull \hbox (badness 10000) in paragraph at lines 830--831
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--741
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
-
- []
-
-
-Underfull \hbox (badness 1590) in paragraph at lines 758--760
+Underfull \hbox (badness 1590) in paragraph at lines 831--833
 \OT1/ptm/m/n/10 front-end ser-vice) to the client(SKT), and if they
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--760
+Underfull \hbox (badness 10000) in paragraph at lines 831--833
 
  []
 
 <fig/6_6.png, id=122, 309.7974pt x 277.9986pt>
 File: fig/6_6.png Graphic file (type png)
 <use fig/6_6.png>
-Package pdftex.def Info: fig/6_6.png  used on input line 765.
+Package pdftex.def Info: fig/6_6.png  used on input line 838.
 (pdftex.def)             Requested size: 154.89832pt x 138.99895pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--775
+Underfull \hbox (badness 10000) in paragraph at lines 844--847
 
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 787--788
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 797--799
+[19 <./fig/6_6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 806--808
+Underfull \hbox (badness 10000) in paragraph at lines 869--871
 
  []
 
-[20 <./fig/6_6.png>]
-Underfull \hbox (badness 6445) in paragraph at lines 817--819
+
+Underfull \hbox (badness 10000) in paragraph at lines 878--880
+
+ []
+
+
+Underfull \hbox (badness 6445) in paragraph at lines 889--891
 []\OT1/ptm/m/it/10 Method4:  \OT1/ptm/m/n/10 If the front con-troller send
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 817--819
+Underfull \hbox (badness 10000) in paragraph at lines 889--891
 
  []
 
 
-Underfull \hbox (badness 2334) in paragraph at lines 822--823
+Underfull \hbox (badness 2334) in paragraph at lines 894--895
 \OT1/ptm/m/n/10 into our project for our pur-pose. We build API
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 822--823
+Underfull \hbox (badness 10000) in paragraph at lines 894--895
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--824
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
 
  []
 
+[20]
 <fig/6_8.png, id=131, 370.0224pt x 356.0502pt>
 File: fig/6_8.png Graphic file (type png)
 <use fig/6_8.png>
-Package pdftex.def Info: fig/6_8.png  used on input line 829.
+Package pdftex.def Info: fig/6_8.png  used on input line 901.
 (pdftex.def)             Requested size: 185.01074pt x 178.02466pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 836--837
+Underfull \hbox (badness 10000) in paragraph at lines 907--908
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 842--843
+Underfull \hbox (badness 10000) in paragraph at lines 913--914
 []\OT1/ptm/m/it/10 Multi-tenancy: \OT1/ptm/m/n/10 Elas-tic-search sup-port mult
 i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 850--851
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 928--930
 
  []
 
 [21 <./fig/6_8.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 857--859
+Underfull \hbox (badness 10000) in paragraph at lines 941--943
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 870--872
-
- []
-
-
-Underfull \hbox (badness 1655) in paragraph at lines 877--878
+Underfull \hbox (badness 1655) in paragraph at lines 948--949
 []\OT1/ptm/m/it/10 Where it is taken from:  \OT1/ptm/m/n/10 This soft-ware is m
 ade
  []
 
 
-Underfull \hbox (badness 2443) in paragraph at lines 877--878
+Underfull \hbox (badness 2443) in paragraph at lines 948--949
 \OT1/ptm/m/n/10 founded in 2012 in Am-s-ter-dam, the Nether-lands,
  []
 
 
-Underfull \hbox (badness 3240) in paragraph at lines 877--878
+Underfull \hbox (badness 3240) in paragraph at lines 948--949
 \OT1/ptm/m/n/10 and was pre-vi-ously known as Elas-tic-search. The
  []
 
 
-Underfull \hbox (badness 4505) in paragraph at lines 877--878
+Underfull \hbox (badness 4505) in paragraph at lines 948--949
 \OT1/ptm/m/n/10 source code of Elas-tic-search can be viewed in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 877--878
+Underfull \hbox (badness 10000) in paragraph at lines 948--949
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 879--880
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
 
  []
 
 <fig/6_9.png, id=136, 564.6696pt x 338.2236pt>
 File: fig/6_9.png Graphic file (type png)
 <use fig/6_9.png>
-Package pdftex.def Info: fig/6_9.png  used on input line 889.
+Package pdftex.def Info: fig/6_9.png  used on input line 959.
 (pdftex.def)             Requested size: 282.3341pt x 169.11139pt.
 <fig/6_10.png, id=137, 181.8795pt x 146.949pt>
 File: fig/6_10.png Graphic file (type png)
 <use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 895.
+Package pdftex.def Info: fig/6_10.png  used on input line 965.
 (pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 902--903
+Underfull \hbox (badness 10000) in paragraph at lines 971--972
 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22 <./fig/6_9.png> <./fig/6_10.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 906--907
+Underfull \hbox (badness 10000) in paragraph at lines 975--976
 
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 922--923
+Underfull \hbox (badness 1983) in paragraph at lines 991--992
 []\OT1/ptm/m/it/10 Where it is taken from:  \OT1/ptm/m/n/10 Be-cause of its uni
 que
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 922--923
+Underfull \hbox (badness 10000) in paragraph at lines 991--992
 
  []
 
 
-Underfull \hbox (badness 1442) in paragraph at lines 924--925
+Underfull \hbox (badness 1442) in paragraph at lines 993--994
 \OT1/ptm/m/n/10 be con-verted fur-ther to be up-graded by crawlling
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--925
+Underfull \hbox (badness 10000) in paragraph at lines 993--994
 
  []
 
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+ [22 <./fig/6_9.png> <./fig/6_10.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1941,7 +2019,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4848 strings out of 492616
  70940 string characters out of 6129481
- 157921 words of memory out of 5000000
+ 172929 words of memory out of 5000000
  8685 multiletter control sequences out of 15000+600000
  39583 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1951,7 +2029,7 @@ exlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on fact_finder.pdf (23 pages, 5020838 bytes).
+Output written on fact_finder.pdf (23 pages, 5024025 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
