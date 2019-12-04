@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{grffile}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -157,14 +158,13 @@ In the log-in page, the user can saves specific politicians or interested keywor
         \item \textit {Subscribing function about interesting politicians:} Users can subscribe about interesting politicians. This function can be spotted on anywhere on our web service for easy and convenient use of service.\\
         \end{enumerate}
     \end{enumerate}
-    \\
+
     \begin{enumerate}
         \item \textit{Nugu service:} User can use our service through Nugu speaker. They can input specific utterance and the Nugu speaker answers back to the users. At this side, three functions should be implemented.\\
         
         \begin{enumerate}
         \item \textit{Searching information of the politicians function:} This function can search politician’s participated agendas. If the user utter curious politician, Nugu speaker send back most recent participated agenda of the politician.\\
         
- 
         \item \textit{Looking up real speech of the politician in that agenda:} User can look up real speech of the politician. Nugu speaker speak out specific politician’s most recent utterance.\\
         
         \item \textit{Changing real speech of the politician in that agenda:} User can request Nugu speaker to play back or forward speech of the politician. Nugu speaker speak out back and forward speech of current playing.\\
@@ -179,7 +179,7 @@ We have researched for some softwares that are doing similar works or having sim
  
 \subsection{g0v}
   \begin{figure}[htbp]
-    \centerline{\includegraphics[width=89mm, scale=0.5]{fig/g0v.png}}
+    \centerline{\includegraphics[width=89mm, scale=0.5]{fig/111.png}}
     \caption{g0v}
     \label{fig}
     \end{figure}
@@ -563,29 +563,352 @@ Nugu & [Politician] said, "~~~".\\
 \label{tab2}
 \end{center}
 \end{table}
-
-
         
-        \begin{enumerate}
+\begin{enumerate}
         \item \textit{Searching information of the politicians function:} This function can search politician’s participated agendas. If the user utter curious politician, Nugu speaker send back most recent participated agenda of the politician. That Politician should be in our politician list data to be searched.\\
-        
- 
         \item \textit{Looking up real speech of the politician in that agenda:} User can look up real speech of the politician. Nugu speaker speak out specific politician’s most recent utterance based on our database.\\
-        
         \item \textit{Changing real speech of the politician in that agenda:} User can request Nugu speaker to play back or forward speech of the politician. Nugu speaker speak out back and forward speech of current playing utterance.\\
-        
         \item \textit {Subscribing function about interesting politicians:} Users can subscribe to interesting politicians.  Politician should be in our politician list to be registered. If the user subscribe specific politician, this is synchronized with our web service.\\
         \item \textit {Deleting subscribed politicians function:} Users can delete subscribed politicians what he registered. If the user delete specific politician, this is synchronized with our web service.\\
            \end{enumerate}
-           
-
-      
-
 \end{enumerate}
     
+\section{Architecture Design \& Implementation}
+\subsection{Overall architecture}
+Our software is consist of three modules. First module is about Web- Frontend. We used HTML, CSS, Javascript and React. Frontend interacts with users who are using our service. User can freely design their own web page and they can add bookmark so that they can make shortcuts to the menu. Also, there are several other options that can fulfill users’ satisfaction. Second part is about Web- Backend. We used node.JS and Passport. It receives request from user in Frontend and give appropriate response back. Last module is about Blockchain. We used Hyperledger fabric to build Private Blockchain. Fig 20 shows overall architecture of our software which interacts with each other.\\
 
- 
- 
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=100mm,scale=0.5]{fig/6_1.png}}
+	\caption{Overall system architecture}
+	\label{fig}
+	\end{figure}
+	
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=70mm,scale=0.5]{fig/6_2.png}}
+	\caption{MVC}
+	\label{fig}
+	\end{figure}
+
+\vspace{30mm}
+\subsection{Directory organization}
+
+  \begin{table}[htbp]
+  \renewcommand{\arraystretch}{1.5}
+\caption{Directory organization}
+\begin{center}
+\begin{tabular}{|p{3cm}|p{4.7cm}|p{1.7cm}|}
+\hline
+\textbf{Directory} & \textbf{File names } &\textbf{Module name} \\
+\hline
+\multirow{7}{*}{/data\_preprocessor\_unit}& \_\_init\_\_.py&Parser \\
+& congress\_member\_list\_preprocessor.py&\\
+& data\_uploader.py &\\
+& file\_manager.py &\\
+& hwp\_to\_text.py & \\
+& requirements.py & \\
+&text\_preprocessor.py& \\
+
+\hline
+\multirow{3}{*}{frontend/} & nuxt.config.js&Web frontend \\
+& package-lock.json & \\
+& package.json & \\
+
+\hline
+\multirow{4}{*}{frontend/components}& CongressMemberList.vue& Web frontend\\
+& Header.vue&\\
+& MeetingLogList.vue & \\
+& OrdinalList.vue & \\
+
+\hline
+\multirow{2}{*}{frontend/layouts} & HeaderLayout.vue& Web frontend\\
+& deafault.vue &\\
+
+\hline
+\multirow{8}{*}{frontend/pages} & CongressMemberListView.vue & Web frontend\\
+& LoginView & \\
+& PlenarySessionBySeriesView.vue & \\
+& ProfileView.vue & \\
+& SignUpView.vue & \\
+& SubscriberListView.vue & \\
+& UnifiedSearchView.vue & \\
+& index.vue & \\
+\hline
+\multirow{2}{*}{frontend/plugins} & bootstrap.js & Web frontend\\
+& fontawesome.js & \\
+\hline
+\multirow{2}{*}{frontend/store} & index.js & Web frontend \\
+& session.js & \\
+\hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+\vspace{70mm}
+\subsection{Module 1: Web Frontend}
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_4.png}}
+	\caption{Module 1: Web Frontend}
+	\label{fig}
+	\end{figure}
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_5.png}}
+	\caption{Web Directory organization}
+	\label{fig}
+	\end{figure}
+	
+\vspace{30mm}
+\begin{enumerate} 
+  \item \textit{Purpose: } The purpose of the Web front-end is to provide our visualized functions to users. Users can request their needs through Web front-end and can deliver their request to the back-end without knowing inner service structure. Our web front-end’s roles in our projects is like below.
+First, Users can’t memorize each of backend and Elasticsearch commands. So the web front-end must provide easy structure of service to receive the request of user’s needed information through single click..
+Second, the users are provided a lot of information in once. So our web front-end should be constructed with a framework that provide information in fast and easy to use.
+Third, The structure of the web front should be developed quickly. Our current projects need to construct four main functions, furthermore, the NUGU speaker functions, so our project team don’t have sufficient time to implement a lot of functions. \\
+  \item \textit{Functionality: } 	
+ \begin{enumerate}
+	\item \textit {Vue.js: }  
+	 \begin{enumerate}
+	\item \textit {Virtual DOM function:} DOM(Document Object Model) is a interface of the web page. It provides API that many programs read and operate web page’s contents, structures, and style. Although, If the web service provide more and more user interfaces an interactions, managing and organizing that much DOM elements is going to be more harder. It is not impossible to setting a rule of fine conventions, but, it is still cumbersome. The Vue.js provides DOM management and minimize states update managements when developing web service. Thereby the developer can concentrate on implementing web functions and user interfaces.
+	\item \textit {SPA(Single Page Application) function:} Vue.js provides SPA. A single-page application (SPA) is a web application or web site that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from a server. This approach avoids interruption of the user experience between successive pages, making the application behave more like a desktop application. In a SPA, either all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load, or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although the location hash or the HTML5 History API can be used to provide the perception and navigability of separate logical pages in the application. Interaction with the single-page application often involves dynamic communication with the web server behind the scenes.
+	\item \textit {Reactive data processing function:} Vue.js provides Reactive data processing function. Along with the data is updated, referencing virtual DOM elements are also should be updated. We don’t need to find corresponding DOM element and change texts, because Vue.js does this function automatically.
+	\item \textit {Reusing codes through components.:} Components means the block that can be combined and can struct screen. When using components, the developers can implement the View by constructing the screen fast in consistent patterns. it helps to understand the codes and reuse of the codes easily. By the components, The Javascript and HTML/CSS are divided and managed separately. So the maintenance become easy and it each codes can be reused. The scale of components can be configured by the developer. Therefore, the components is important in Vue.js Framework and the way of creation of components determines Vue.js’s developing speed, readability and effectiveness of codes.\\
+	  \end{enumerate}
+	  
+	\item \textit {Nuxt.js: }Nuxt.js is a framework that can help to make Vue.js applications easily and improve productivity.\
+		 \begin{enumerate}
+		\item \textit {The UI rendering makes abstractions of client/server distribution. Just by installing Nuxt.js, it scaffolds(makes the project structured) the projects, so the developer can relieve the worry about the project structure.}  
+	\item \textit { Nuxt.js predefines the configuration to help the developer to implement every structure that needed by the server-side rendered Vue.js application.}\\
+	  \end{enumerate}
+
+  \end{enumerate}
+  \item \textit{Location of Source Code: } software engineering/frontend/\\
+
+  \item \textit{Class component: } 
+    \begin{enumerate}
+	\item \textit {Vuex: }  Vuex is a manager of the virtual DOM. It observes the change of individual elements and updates them.\\
+	\item \textit {Vue CLI:}Vue CLI(Vue Command Line Interface) makes and set up the projects automatically. It gathers Webpack, the package that gathers functions used by web developing, end configurate fundamental settings through several clicks. It is similar to NPM, the Node Package Manager, because the Vue CLI is activated through NPM.\\
+	\item \textit {Vue Router:} Vue Router helps Vuex to manage Virtual DOM easily. In other words, It routes the way of what elements to be taken care of by the Vuex. By setting up individual elements on Vuex and drag it into the Vue router, the developer can reuse that elements to other functions.\\
+	\end{enumerate}
+  \item \textit{Where it is taken from: } Vue.js is developed by Evan You, who used AngularJS in various projects in google. The source code of Vue.js in in “https://github.com/vuejs/vue” and we used this package into our projects for our purpose.\\
+  \item \textit{How and Why we use it: } We will fully use the productivity of Vue.js technique. We uses Vue.js technique to achieve the purpose of web front-end. Our current project have to implement four core functions and NUGU speaker function. Our team decided to use Vue.js javascript framework because of its lower entry barrier, flexibility, high performance, and easier maintenance and testing environment. The Vue.js officially supports build system, routing, status management that needed to used in real service so we can develop our environment very fast. Also we will use Nuxt.js to enhance our developing productivity because it helps to abstract server and distribute our service.\\
+  \end{enumerate}
+
+
+\subsection{Module 1.b: NUGU speaker frontend}
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_7.png}}
+	\caption{Web Directory organization}
+	\label{fig}
+	\end{figure}
+	
+\vspace{30mm}
+\begin{enumerate} 
+  \item \textit{Purpose: } The biggest difference between web front-end and NUGU speaker front-end is that the web front-end communicates with user as visualized, and the NUGU speaker front-end communicates with user as sound. It is the first core roles to communicate with NUGU AI speaker. Second, it must built on stable by training the system through NUGU play builder to reduces frequency of exception rate. Third, it has to communicate with our back-end without errors by setting up RESTful each action.\\
+  \item \textit{Functionality: } 	
+ \begin{enumerate}
+	\item \textit {Doesn’t need coding skill: }  NUGU play builder that made by SKT for developers makes the developer to implement what he wants without programming skill. The GUI interface doesn’t require coding phase, except for if the developer wants to get information from his system.\	  
+	\item \textit {Automatic voice recognition: }The internal built-in technique such as Automatic Speech Recognition, Natural Language Understanding, Dialog Management, Natural Language Generation, Test To Speech automatically recognize user utterances and makes appropriate response to the user.\
+	\item \textit {Communicate with backend proxy: }Only with the NUGU play builder, the developer can’t make own system that communicates with other server. The developer should make own RESTful server and controller to deliver values to the NUGU play builder, eventually, to user.\\
+  \end{enumerate}
+  
+  \item \textit{Location of Source Code: } https://builder.NUGU.co.kr/\\
+
+  \item \textit{Class component: } 
+  	 \begin{enumerate}
+	\item \textit {Intents: }  It means prediction of user utterance after NUGU play made. It should be defined beforehand of user utterance. NUGU play ties up user utterances that intend to activate specific function.\
+	 \begin{enumerate}
+	\item \textit {PFF subscribe: } User can subscribe specific politician through this intent. The politician name defined in Entity types should be tied up with this intent to implement this intent.
+	\item \textit {PFF agendalist:} User can be returned specific agenda which specific politician was participated. The politician name defined in Entity types should be tied up with this intent to implement this intent.
+	\item \textit {PFF politicianlist:} User can be returned politician list that user was subscribed. The politician list should be saved in our database to return to the user.
+	\item \textit {PFF recent discussion:} User can be returned specific discussion which specific politician was participated. The politician name defined in Entity types should be tied up with this intent to implement this intent.\\
+	  \end{enumerate}
+
+	\item \textit {Entity types: }  The Entity type should be predefined to match up intents. If it is not predefined and tied up with intents, the NUGU speaker can’t understand what the user want to mean.\
+	 \begin{enumerate}
+	\item \textit {POLITICIAN NAME: } Politician name was predefined to be tied up with intents. All of the politicians should be predefined manually in this entity type.
+	  \end{enumerate}
+	  
+	  	\item \textit {Actions: }  Our custom actions should be predefined to match up with intents. In this, predefined intents become the trigger to get return information. The parameters get from the our backend controller will be returned to the user.\
+	 \begin{enumerate}
+	\item \textit {subscribeAnswer: } It is tied up with intent, PFF subscribeAnswer. User can subscribe specific politician through this intent. The politician name defined in Entity types should be tied up with this intent to implement this intent.
+	\item \textit {agendaAnswer: } It is tied up with intent, PFF agendalist. User can be returned specific agenda which specific politician was participated. The politician name defined in Entity types should be tied up with this intent to implement this intent.
+	\item \textit {politicianlistAnswer:} It is tied up with intent, PFF politicianlist. User can be returned politician list that user was subscribed. The politician list should be saved in our database to return to the user.
+	\item \textit {recentdiscussionAnswer: } It is tied up with intent, PFF recent discussion. User can be returned specific discussion which specific politician was participated. The politician name defined in Entity types should be tied up with this intent to implement this intent.
+	  \end{enumerate}
+	  	  \end{enumerate}
+		  
+	    \item \textit{Where it is taken from: } It is from NUGU developer site, “https://developers.NUGU.co.kr/” and its document is from “https://developers-doc.NUGU.co.kr/”.\\
+  \item \textit{How and Why we use it: } By predefining all of intents, entities and actions we can submit this Play(A whole front-end service) to the client(SKT), and if they approve this system, finally user can use our voice front-end service.
+We used NUGU play builder because through this we can easily make prototype of AI intercommunicating speaker platform. Also, the client, SKT, demanded to make a complete system that have a potential of commercializing.\\
+  \end{enumerate}
+  
+  
+  \subsection{Module 2: backend}
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_6.png}}
+	\caption{Module 1: Web Frontend}
+	\label{fig}
+	\end{figure}
+	
+\vspace{30mm}
+\begin{enumerate} 
+  \item \textit{Purpose: } The purpose of the back-end is to process of the user request that is from the front-end. If the user requests something from our front-end service, the back-end receives that request and delivers the message to our Database and receive the response data, and filters information that the front-end needs. Originally the database can be included in the back-end, but we made our database through the Elasticsearch separately, and we will discuss it as a separate module.
+Our back-end purpose is like below. First, It should perform the functions that the front-end requests. Second, It should gives and takes values from Elasticsearch database to perform the functions that the front-end requests.
+For that purposes, We used Spring framework, that is based on Java language. The Elasticsearch provide response based on json format, we developed API controller that uses HTTPS, RESTful protocol to communicate with our database. Also, we developed Web controller to process requests from our web service, and NUGU controller that process requests from NUGU speaker. Through our back-end module, we can provide refined requests data to users.\\
+  \item \textit{Functionality: } 	
+  	 \begin{enumerate}
+
+	\item \textit {Spring: }   The Spring Framework is an open source application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform.
+	 \begin{enumerate}
+	\item \textit {MVC pattern:} A business logic, MVC(Model View Controller) is a design pattern that places Controller between Model and View to separates them. Spring uses Front Controller pattern to implement MVC pattern as other web MVC framework, and it is laid out with servlet that provide several functions of this framework. The DiapatcherServlet takes role of Front Controller in the Spring, furthermore, it is integrated with IoC container to use all of other functions of Spring, and supervise web request life cycle. So, The Spring DispatcherServlet is the Spring MVC’s core elements. Specifically in our project, the Vue.js takes the role of View, and the Spring Controller function as RESTful to change preexistence Model domain roles to HTTP json protocol.
+	\item \textit {Batch framework:} Spring provides batch framework that supports batch processing. The batch processing is used for processing a lot of data or executed in specific time. Basically the Spring batch framework is operated on Quartz.
+	  \end{enumerate}
+	  
+	\item \textit {Tomcat: }The tomcat is called as a Web or servlet container to build dynamic web. The dynamic elements as JSP, ASP, PHP are delivered to the Tomcat except for static data like CSS.\
+  	  \end{enumerate}
+
+  \item \textit{Location of Source Code: } https://builder.NUGU.co.kr/\\
+
+  \item \textit{Class component: } 
+  	 \begin{enumerate}
+	\item \textit {Web controller: }  \
+	 \begin{enumerate}
+	\item \textit {Method1: }  If user sends information of specific meeting’s id number, it returns specific meeting and number of meeting to View
+	\item \textit {Method2: } If user sends information of meeting or meeting number, Return specific agenda and discussion to the front controller
+	\item \textit {Method3: } If user sends information of specific meeting’s id number, it returns politician’s name and his party to the front controller
+	\item \textit { Log-in:} If user sends right information of id and password, it returns successful status message to the View
+	\item \textit { Subscribe:} If user send message that he wants to subscribe specific politician, It make the politician subscribed
+	\\
+	 \end{enumerate}
+
+	\item \textit {NUGU controller: }  \
+
+	 \begin{enumerate}
+	\item \textit {Method1: }   If the user send information of politician’s name, it returns information of meeting and number of meeting that politician’s participated.
+	\item \textit {Method2: } If the user send information of politician’s name, it returns information of agenda that politician’s participated.
+	\item \textit {Method3: } If the user requests subscribed list, it returns politician subscribed list.
+	\\
+	  \end{enumerate}
+	  
+	  
+	 \item \textit {API controller: }  \
+
+	 \begin{enumerate}
+	\item \textit {Method1: }If the front controller send information of specific meeting’s id number, it returns specific meeting and number of meeting to the front controller	
+	\item \textit {Method2: } If the front controller send information of meeting or meeting number, Return specific agenda and discussion to the front controller
+	\item \textit {Method3: }  If the front controller send information of specific meeting’s id number, it returns politician’s name and his party to the front controller
+	\item \textit {Method4: }  If the front controller send information of politician’s name, it returns specific meeting information and discussion to the front controller
+	\\
+	  \end{enumerate}
+	  \end{enumerate}	  
+		  
+	    \item \textit{Where it is taken from: } The Spring is the open source application framework for Java platform. The source code of Spring of Spring is in “https://github.com/spring-projects/spring-framework” and we used this package into our project for our purpose. We build API controller, NUGU controller, Web controller through this package and add pages to refine our functions.\\
+  \item \textit{How and Why we use it: } We will use Spring framework and we will build Spring MVC pattern for our purpose. In our project, Vue.js is used for View part. Also, the database will be built on Elasticsearch software. The elasticsearch give and takes information on json format. So our back-end controller will be built like RESTful to change preexistence model domain roles to HTTP json protocol to communicate with our database. Furthermore, the Web controller and NUGU controller is built on Restful because the front-ends are also communicate with RESTfully, and it gives universality and unity to overall structure. The controllers in our Spring framework will provide responses with refined data on user requests.\\
+  \end{enumerate}
+
+  
+  \subsection{Module 3: Database(Elasticsearch)}
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_8.png}}
+	\caption{Module 1: Web Frontend}
+	\label{fig}
+	\end{figure}
+	
+\vspace{30mm}
+\begin{enumerate} 
+  \item \textit{Purpose: } One of our main function, Searching real speech of the politician should be developed on exquisite searching algorithm. The Elasticsearch supports very delicate searching function through inverted indexing. Also, the speed of the service decides the steady use of our service. That is, using this database determines our service’s life or death. So our team decided to use this system.\\
+  \item \textit{Functionality: } 	
+  	 \begin{enumerate}
+
+	\item \textit {No-schema storage that based on json format: }   Although the elasticsearch is a search engine, but it can be used as NoSQL. Elasticsearch uses data model as a json, so sending requests and receiving responses are conducted on json document, and saving source to json format. Even if the developer doesn’t predefined schema, this engine indexes the json format data automatically. The number or date types are also mapped automatically.\
+	  
+	\item \textit {Multi-tenancy: }Elasticsearch support multi-tenancy. By storing several indexes in only one elasticsearch server, the controller can receive search results by sending only one query the data in several indexes. For example, even if the data is separated by dates, the one query can get results by adjusting the searching range.\
+	
+	\item \textit {Expandability and flexibility: }Elasticsearch’s expandability and flexibility are very outstanding. The developer can expand functions through plug-in. The developer can change transport protocol by using Thrift or Jetty plugin. Also, the developer can use elasticsearch monitoring function by installing BigDesk or Head plugin. We can be provided far more accurate, visualized statistics through extendable plug in.\
+		
+	\item \textit {Distributed storage: }The elasticsearch is distributed storage. The data can be distributed by keys, several shards are constructed. Indexes are constituted by each shards. Each shards has more than 0 replicas. Elasticsearch supports clustering, and when the cluster activated, one of the nodes is elected as a master node to manage mata-data. If the master node goes down, another node in cluster becomes master node. Adding node is also very easy. The characteristic of distributed storage makes the database more fast and more safe.\
+			
+  	  \end{enumerate}
+
+  \item \textit{Location of Source Code: } https://builder.NUGU.co.kr/\\
+
+  \item \textit{Class component: } 
+  	 \begin{enumerate}
+	\item \textit {Request queryr: }  The request query’s format is formatted on json. The request json query have two field components. If the user enter some words in the search bar in our service, their words will filled in the URL parameter to send request query to our database.\
+	 \begin{enumerate}
+	\item \textit {path: }  path specifies where to find the result.\
+	\item \textit {match: } match specifies what to search. The match keyword  is filled in both agenda and discussions, that will be separated from the results.\
+	\\
+	 \end{enumerate}
+	 
+	 
+	\item \textit {Response message: }  The request message is also formatted on json. The response json message have several response data. These informations will become the result in the front end.
+	 \begin{enumerate}
+	\item \textit {index: }  It is similar to RDBMS’s table. specifically, It exhibits Nth Congress meeting of the Nth National Assembly.\
+	\item \textit {id: } It exhibits the round number of Nth congress meeting.\
+	\item \textit {field: } It’s like RDBMS’s column. field specify where to request the data.\
+	\item \textit {offset: } It means what number of the utterances in agenda.\
+	\item \textit {score: } IIt means that the similarity between searching keyword and the result data. By descending the order of score, user can get the most similar result.\
+	\item \textit {agenda: }  It means the agenda of corresponding result.\
+	\item \textit {discussion: }It means the whole utterances of politicians in the result.\
+		\\
+	 \end{enumerate}
+	 
+		 \end{enumerate}
+
+		  
+	    \item \textit{Where it is taken from: } This software is made by Elastic NV. Elastic NV is a company that was founded in 2012 in Amsterdam, the Netherlands, and was previously known as Elasticsearch. The source code of Elasticsearch can be viewed in “https://github.com/elastic/elasticsearch”.\\
+	    
+  \item \textit{How and Why we use it: } Automated system makes query that composed on json format to be delivered to the Database. The result of that query will appear The speed of searching is very fast if we use Elasticsearch. Based on Similarity measure system in the Elasticsearch produces more accurate result to user in effort.  The searching algorithm that implemented through inverted indexing makes our service far more faster. Besides, even though its functionality, it is open source so it is free to use if not for commercial use.\\
+  \end{enumerate}
+  
+  
+  
+  
+  
+  
+    \subsection{Module 4: Parser}
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_9.png}}
+	\caption{Module 1: Web Frontend}
+	\label{fig}
+	\end{figure}
+	
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+	\caption{Module 1: Web Frontend}
+	\label{fig}
+	\end{figure}
+	
+\vspace{30mm}
+\begin{enumerate} 
+  \item \textit{Purpose: } Our service’s purpose is to  provide Assembly minutes and its data to the users. The core data that we want to provide is uploaded on the assembly minutes site, but its files location and forms and are too complicated to see or find. So our team decided to refine these files to save our database. If this module doesn’t exist, The next further modules won’t be existed because of unorganized original formats.\\
+  
+  \item \textit{Functionality: } This module performs as a preprocessor of raw data. The raw data are formed with hwp file or pdf file. The chosen hwp file will be converted into the text, and finally with json format that can be uploaded to Database as well-organized.\
+
+  \item \textit{Location of Source Code: } /data preprocessor unit/\\
+
+  \item \textit{Class component: } 
+  	 \begin{enumerate}
+	\item \textit {Convert hwp file to text: }  This script convert hwp file that are downloaded from assembly minutes files to texts that should be refined after through text preprocessor. The hwp file can’t be uploaded to the Elasticsearch Database. The text file name is refactored by this file to the English name for afterward. What file that should be converted is managed by file manager.py\
+
+	\item \textit {Text preprocessor: }  The text components converted by hwp to text.py will be parsed through this file. The contents of text file is so dizzy and didn’t organized. The contents will be parsed by  separators. The text file will be parsed by four components, “round plenary session, type, id, dialogue” on json format.\
+	
+	\item \textit {Congress member list preprocessor: }  The congress member list that can be downloaded from National Election Commision made of excel form will be converted through this preprocessor. the list of congress member will be organized with json format.\
+	
+	\item \textit {Data uploader: }  The json datas refined from above are finally saved to the Elasticsearch, our database.\
+	\item \textit {File manager: }  The file manager decides what file to be converted to another format. it checks argv and manages the file to be read.\
+	 
+		 \end{enumerate}
+
+		  
+	    \item \textit{Where it is taken from: } Because of its unique characteristic of our algorithm, fit codes for our parsing system not much distributed from internet. So we had to fetch a few open source packages only like pyhwp, pathlib, dataclasses, multiprocessing, json, subprocess, re, openpyxl, elasticsearch.\\
+	    
+  \item \textit{How and Why we use it: } In first step, the hwp files are downloaded mannually by hands.This step will be converted further to be upgraded by crawlling data. Then, Operate hwp to text function should be processed to convert hwp format to text format, and text preprocessor converts text format to json format. Along with this steps, the congress member list preprocessor function also be operated to convert politician list excel files to json format. Finally, Operating the data upload function upoloads the json format data to Elasticsearch Database. The Elasticsearch database is updated based on NoSQL, so the data should be converted to json format to save to Database. So we should have to use this module to convert data to json format by exquisitely refining.\\
+  \end{enumerate}
+  
+  
+  
 \end{document}
  
  
