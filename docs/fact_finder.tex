@@ -735,8 +735,15 @@ docs/ & fact\_finder.pdf & documentation \\
 \end{center}
 \end{table}
 
-\subsection{Module 1: Web Frontend}
 
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=70mm,scale=0.5]{fig/overall.png}}
+\caption{Overall directory organization}
+\label{fig}
+\end{figure}
+
+
+\subsection{Module 1: Web Frontend}
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_4.png}}
@@ -750,6 +757,7 @@ docs/ & fact\_finder.pdf & documentation \\
 \caption{Web Directory organization}
 \label{fig}
 \end{figure}
+
 \begin{enumerate}
   \item \textit{Purpose: } The purpose of the Web front-end is to provide our visualized functions to users. Users can request their needs through Web front-end and can deliver their request to the back-end without knowing inner service structure. Our web front-end’s roles in our projects is like below.
 First, Users can’t memorize each of backend and Elasticsearch commands. So the web front-end must provide easy structure of service to receive the request of user’s needed information through single click..
@@ -792,6 +800,7 @@ Third, The structure of the web front should be developed quickly. Our current p
 \label{fig}
 \end{figure}
 
+\vspace{30mm}
 \begin{enumerate}
   \item \textit{Purpose: } The biggest difference between web front-end and NUGU speaker front-end is that the web front-end communicates with user as visualized, and the NUGU speaker front-end communicates with user as sound. It is the first core roles to communicate with NUGU AI speaker. Second, it must built on stable by training the system through NUGU play builder to reduces frequency of exception rate. Third, it has to communicate with our back-end without errors by setting up RESTful each action.\\
   \item \textit{Functionality: }
@@ -833,12 +842,30 @@ We used NUGU play builder because through this we can easily make prototype of A
   \end{enumerate}
  
  
-  \subsection{Module 2: backend}
+ \vspace{50mm}
+ 
+  \subsection{Module 2: Backend}
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_6.png}}
-\caption{Module 1: Web Frontend}
+\caption{Module 1: Backend}
 \label{fig}
 \end{figure}
+
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/backend1.png}}
+\caption{Backend directory organization(1)}
+\label{fig}
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/backend2.png}}
+\caption{Backend directory organization(2)}
+\label{fig}
+\end{figure}
+
+ \vspace{50mm}
+
 
 \begin{enumerate}
   \item \textit{Purpose: } The purpose of the back-end is to process of the user request that is from the front-end. If the user requests something from our front-end service, the back-end receives that request and delivers the message to our Database and receive the response data, and filters information that the front-end needs. Originally the database can be included in the back-end, but we made our database through the Elasticsearch separately, and we will discuss it as a separate module.
@@ -895,13 +922,15 @@ For that purposes, We used Spring framework, that is based on Java language. The
   \item \textit{How and Why we use it: } We will use Spring framework and we will build Spring MVC pattern for our purpose. In our project, Vue.js is used for View part. Also, the database will be built on Elasticsearch software. The elasticsearch give and takes information on json format. So our back-end controller will be built like RESTful to change preexistence model domain roles to HTTP json protocol to communicate with our database. Furthermore, the Web controller and NUGU controller is built on Restful because the front-ends are also communicate with RESTfully, and it gives universality and unity to overall structure. The controllers in our Spring framework will provide responses with refined data on user requests.\\
   \end{enumerate}
 
- 
+  \vspace{250mm}
+
   \subsection{Module 3: Database(Elasticsearch)}
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_8.png}}
-\caption{Module 1: Web Frontend}
+\caption{Elasticsearch structure}
 \label{fig}
 \end{figure}
+
 
 \begin{enumerate}
   \item \textit{Purpose: } One of our main function, Searching real speech of the politician should be developed on exquisite searching algorithm. The Elasticsearch supports very delicate searching function through inverted indexing. Also, the speed of the service decides the steady use of our service. That is, using this database determines our service’s life or death. So our team decided to use this system.\\
@@ -944,7 +973,7 @@ For that purposes, We used Spring framework, that is based on Java language. The
 
 \end{enumerate}
 
-
+ 
    \item \textit{Where it is taken from: } This software is made by Elastic NV. Elastic NV is a company that was founded in 2012 in Amsterdam, the Netherlands, and was previously known as Elasticsearch. The source code of Elasticsearch can be viewed in “https://github.com/elastic/elasticsearch”.\\
    
   \item \textit{How and Why we use it: } Automated system makes query that composed on json format to be delivered to the Database. The result of that query will appear The speed of searching is very fast if we use Elasticsearch. Based on Similarity measure system in the Elasticsearch produces more accurate result to user in effort.  The searching algorithm that implemented through inverted indexing makes our service far more faster. Besides, even though its functionality, it is open source so it is free to use if not for commercial use.\\
@@ -953,19 +982,21 @@ For that purposes, We used Spring framework, that is based on Java language. The
  
  
  
-
+ 
+ 
     \subsection{Module 4: Parser}
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_9.png}}
-\caption{Module 1: Web Frontend}
+\caption{Parser workflow}
 \label{fig}
 \end{figure}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=60mm,scale=0.5]{fig/6_10.png}}
-\caption{Module 1: Web Frontend}
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
 \label{fig}
 \end{figure}
+
 
 \begin{enumerate}
   \item \textit{Purpose: } Our service’s purpose is to  provide Assembly minutes and its data to the users. The core data that we want to provide is uploaded on the assembly minutes site, but its files location and forms and are too complicated to see or find. So our team decided to refine these files to save our database. If this module doesn’t exist, The next further modules won’t be existed because of unorganized original formats.\\
