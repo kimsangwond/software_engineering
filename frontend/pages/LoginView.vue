@@ -30,7 +30,7 @@
           <b-button block type="submit" variant="primary" @click="login">로그인</b-button>
         </div>
         <div class="mt-3">
-          <b-button block variant="secondary" @click="signUp">회원가입</b-button>
+          <b-button block variant="secondary" to="/SignUpView">회원가입</b-button>
         </div>
       </b-form>
     </b-card>
@@ -54,21 +54,14 @@
         event.preventDefault()
       },
       login() {
-        //백엔드 연결시에 async로 고칠 것
         try {
           this.$store.dispatch('login', {
             id: this.form.id,
             pw: this.form.pw
-          }).then(() => this.redirect("/"))
+          }).then(() => this.$router.push("/"))
         } catch (e) {
           this.errorMsg = e.message
         } 
-      },
-      redirect(url) {
-        this.$router.push(url)
-      },
-      signUp() {
-        this.redirect("/SignUpView")
       }
     }
   }

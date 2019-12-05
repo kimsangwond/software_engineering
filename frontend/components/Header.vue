@@ -15,8 +15,8 @@
                         <template v-slot:button-content>
                             <em>{{ userNickName }}</em>
                         </template>
-                        <b-dropdown-item href="/SubscriberListView">구독중인 목록</b-dropdown-item>
-                        <b-dropdown-item href="/ProfileView">프로필</b-dropdown-item>
+                        <b-dropdown-item to="/SubscriberListView">구독중인 목록</b-dropdown-item>
+                        <b-dropdown-item to="/ProfileView">프로필</b-dropdown-item>
                         <b-dropdown-item @click="logout">로그아웃</b-dropdown-item>
                     </b-nav-item-dropdown>
                     <b-nav-item v-else to="/LoginView">로그인</b-nav-item>
@@ -26,29 +26,20 @@
     </div>
 </template>
 <script>
-    import { mapGetters } from 'vuex'
-
     export default {
         computed: {
             userId: function() {
-                return this.$store.state.id
+                return this.$store.getters.id
             },
             userNickName: function() {
-                return this.$store.state.nickName
+                return this.$store.getters.nickName
             }
-        },
-        mounted: function() {
-            this.userId = this.id,
-            this.userNickName = this.nickName
         },
         methods: {
             logout() {
                 this.$store.dispatch('logout').
-                then(() => this.redirect("/"))
+                then(() => {this.$router.push("/")})
             },
-            redirect(url) {
-                this.$router.push(url)
-            }
         }   
     }
 </script>
