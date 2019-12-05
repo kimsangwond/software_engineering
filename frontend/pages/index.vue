@@ -11,7 +11,13 @@
           >
           </b-form-input>
           <b-input-group-append>
-            <b-button type="submit" variant="primary" @click="search">Button</b-button>
+            <b-button 
+              type="submit" 
+              variant="primary" 
+              @click="onSearch"
+              >
+              검색
+            </b-button>
           </b-input-group-append>
         </b-input-group>
       </b-form>
@@ -32,18 +38,12 @@
       onSubmit: function(event) {
         event.preventDefault()
       },
-      async search() {
-        axios.get("/searchMeetingLogs",{
-          params: {
-            keywords: this.searchTarget
-          }
-        }).then((res) => {
-            this.$router.push('UnifiedSearchView',
-              params={
-                meetingLog: res.data
-            })    
-        })
-      } 
-    }
+      onSearch: function() {
+        this.$router.push({
+          name: 'UnifiedSearch-keywords',
+          params: {keywords: this.searchTarget}}
+        )
+      }
+    } 
   }
 </script>

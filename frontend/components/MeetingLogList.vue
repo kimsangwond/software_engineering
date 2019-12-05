@@ -1,26 +1,28 @@
 <template>
-    <div v-if="meetingLogsList" role="tablist">
-        <b-card v-for="meetingLogs in meetingLogsList" 
-            :key="meetingLogs.round" 
-            no-body class="mb-1">
-            <b-card-header header-tag="header" class="p-1" role="tab">
-                <b-button block v-b-toggle="meetingLogs.round + '-round'" variant="info">
-                    {{ meetingLogs.text }}
-                </b-button>
-            </b-card-header>
-            <b-collapse :id="meetingLogs.round + '-round'" role="tabpanel">
-                <b-card-body>
-                    <b-list-group>
-                        <b-list-group-item 
-                            v-for="meetingLog in meetingLogs.dialogue" 
-                            :key="meetingLog.time"
-                            @click="onSearch(meetingLogs.round, meetingLog.time)"
-                            >
-                            {{ meetingLog.text }}
-                        </b-list-group-item>
-                    </b-list-group>
-                </b-card-body>
-            </b-collapse>
+    <div v-if="selectedOrdinal" role="tablist">
+        <b-card :header="selectedOrdinal + '대 국회 ' + meetingType + ' 목록'">
+            <b-card v-for="meetingLogs in meetingLogsList" 
+                :key="meetingLogs.round" 
+                no-body class="mb-1">
+                <b-card-header header-tag="header" class="p-1" role="tab">
+                    <b-button block v-b-toggle="meetingLogs.round + '-round'" variant="info">
+                        {{ meetingLogs.text }}
+                    </b-button>
+                </b-card-header>
+                <b-collapse :id="meetingLogs.round + '-round'" role="tabpanel">
+                    <b-card-body>
+                        <b-list-group>
+                            <b-list-group-item 
+                                v-for="meetingLog in meetingLogs.dialogue" 
+                                :key="meetingLog.time"
+                                @click="onSearch(meetingLogs.round, meetingLog.time)"
+                                >
+                                {{ meetingLog.text }}
+                            </b-list-group-item>
+                        </b-list-group>
+                    </b-card-body>
+                </b-collapse>
+            </b-card>
         </b-card>
     </div>
     <div v-else>
@@ -30,38 +32,40 @@
 
 <script>
     import axios from 'axios'
+    import { meetingTypeMap, URL } from '@/assets/config.js'
 
     export default {
         props: [
             'selectedOrdinal', 
             'searchType'    
         ],
+        data: function() {
+            return {
+                meetingType: meetingTypeMap.get(this.searchType),
+                meetingLogsList: [],
+            }
+        },
         watch: {
-            async selectedOrdinal() {
-                this.meetingLogsList = await axios.get('/getMeetingLogsList', {
-                    params: {
-                        ordinal: this.selectedOrdinal,
-                    }
-                })
+            selectedOrdinal: {
+                immediate: true,
+                handler: async function(newOrdinal) {
+                    this.meetingLogsList = await axios.get(
+                        URL + '/meetingInfo', 
+                        {params: {ordinal: this.selectedOrdinal}}
+                    ).then((res) => {
+                        return res.data
+                    })
+                }
             }
         },
         methods: {
-            async onSearch(round, time) {
-                axios.get('/searchMeetingLog', {
-                    params: { 
-                        type : this.searchType, 
-                        ordinal: this.selectedOrdinal, 
-                        round: round, 
-                        time: time
+            onSearch: function(round, time) {
+                this.$router.push({
+                    name: 'ViewDialogue-typeRoundTime',
+                    params: {
+                        typeRoundTime: `${this.searchType}-${round}-${time}`
                     }
-                }).then((res) => {
-                    this.$router.push('ViewDialogue',
-                    params={
-                        meetingLog: res.data
-                    })                    
-                }
-
-                )
+                })                    
             },
         }
     }

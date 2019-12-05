@@ -1,11 +1,13 @@
 <template>
-    <div class="select-oridnal">
-        <select class="form-control" v-model="selectedOrdinal" @change="setOrdinal">
-            <option disabled value="">몇 대 국회인지 선택해주세요</option>
+    <div>
+        <b-form-select v-model="choice" @change="setOrdinal">
+            <template v-slot:first>
+                <option :value="null" disabled> 몇 대 국회인지 선택해주세요.</option>
+            </template>
             <option v-for="info in options" :key="info.id" :value="info.id">
                 {{ info.text }}
             </option>
-        </select>
+        </b-form-select>
     </div>
 </template>
 
@@ -24,15 +26,21 @@
     }
 
     export default {
+        props: [ 'selectedOrdinal' ],
         data: function() {
             return {
-                selectedOrdinal: '',
+                choice: this.selectedOrdinal,
                 options: temporaryArray()
+            }
+        },
+        watch: {
+            selectedOrdinal: function() {
+                this.choice = this.selectedOrdinal
             }
         },
         methods:{
             setOrdinal: function() {
-                this.$emit('interface', this.selectedOrdinal)
+                this.$emit('interface', this.choice)
             }
         } 
     }

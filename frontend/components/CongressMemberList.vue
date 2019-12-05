@@ -1,10 +1,34 @@
 <template>
     <div v-if="selectedOrdinal">
-        <b-table striped hover :items="congressMemberList" :fields="fields"></b-table>
+        <b-card :header="selectedOrdinal + '대 국회의원 명단'" v-if="congressMemberList">
+            <b-table 
+                ref="selectableTable"
+                striped hover 
+                :items="congressMemberList" 
+                :fields="fields" 
+                >
+                <template v-slot:cell(searchButton)="row">
+                    <b-button 
+                        size="sm" 
+                        :to="{name: 'UnifiedSearch-name', params: {name: row.item.name}}" 
+                        class="mr-1">
+                        회의록 찾기
+                    </b-button>
+                </template>
+                <template v-slot:cell(subscribeButton)="row">
+                    <b-button size="sm" @click="subscribeMember(row.item)" class="mr-1">
+                        구독하기
+                    </b-button>
+                </template>
+            </b-table>
+        </b-card>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
+    import { URL } from "@/assets/config.js"
+
     export default {
         props: [
             'selectedOrdinal', 
@@ -14,43 +38,45 @@
             return {
                 fields: [
                     {
-                        key: 'politicalParty',
+                        key: 'party',
                         label: "정당",
                         sortable: true
                     },
                     {
-                        key: 'memberName',
+                        key: 'name',
                         label: "국회의원 이름",
                         sortable: true
+                    },
+                    {
+                        key: 'searchButton',
+                        label: '발언 검색하기',
+                        sortable: false
+                    },
+                    {
+                        key: 'subscribeButton',
+                        label: '구독',
+                        sortable: false
                     }
                 ],
-                congressMemberList: [
-                    {
-                        isActive: false,
-                        politicalParty: "더불어민주당",
-                        memberName: '홍익표'                      
-                    },
-                    {
-                        isActive: false,
-                        politicalParty: "더불어민주당",
-                        memberName: '표창원'                      
-                    },
-                    {
-                        isActive: false,
-                        politicalParty: "자유한국당",
-                        memberName: '강석진'                      
-                    },
-                    {
-                        isActive: false,
-                        politicalParty: "자유한국당",
-                        memberName: '김광림'                      
-                    }
-                ]                
+                congressMemberList: []
             }
         },
         watch: {
-            selectedOrdinal: function() {
-                this.congressMemberList = []
+            selectedOrdinal: {
+                immediate: true,
+                handler: async function(newOrdinal) {
+                    this.congressMemberList = await axios.get(
+                        URL + '/congressMember',
+                        {params: {ordinal: this.selectedOrdinal}}
+                    ).then((res) => {
+                        return res.data.member_info_list
+                    })
+                }
+            }
+        },
+        methods: {
+            subscribeMember: function(item) {
+                //vuex에 기능추가할 것   
             }
         }
     }      
