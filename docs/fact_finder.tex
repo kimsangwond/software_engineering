@@ -623,7 +623,7 @@ Our project’s overall system architecture is like below. Our system components
 \subsection{Directory organization}
 Our directory organization is comprised of three part: Parser, Web-frontend, Backend. These directory is uploaded in our github address, "https://github.com/kimsangwond/software\_engineering".
 
-  \begin{table}[htbp]
+ \begin{table}[htbp]
   \renewcommand{\arraystretch}{1.5}
 \caption{Directory organization}
 \begin{center}
@@ -643,26 +643,19 @@ Our directory organization is comprised of three part: Parser, Web-frontend, Bac
 frontend/& nuxt.config.js&Web frontend \\
 & package-lock.json & \\
 & package.json & \\
+& requirements.txt & \\
 
 \hline
 frontend/components& CongressMemberList.vue& Web frontend\\
 & Header.vue&\\
 & MeetingLogList.vue & \\
 & OrdinalList.vue & \\
+& UnifiedSearchResult.vue & \\
 
 \hline
 frontend/layouts& HeaderLayout.vue& Web frontend\\
 & deafault.vue &\\
 
-\hline
-frontend/pages& CongressMemberListView.vue & Web frontend\\
-& LoginView & \\
-& PlenarySessionBySeriesView.vue & \\
-& ProfileView.vue & \\
-& SignUpView.vue & \\
-& SubscriberListView.vue & \\
-& UnifiedSearchView.vue & \\
-& index.vue & \\
 \hline
 frontend/plugins & bootstrap.js & Web frontend\\
 & fontawesome.js & \\
@@ -670,18 +663,31 @@ frontend/plugins & bootstrap.js & Web frontend\\
 frontend/store& index.js & Web frontend \\
 & session.js & \\
 \hline
+frontend/assets & ConfirmPassword.js & Web frontend\\
+& background-image.jpeg & \\
+\hline
 
+frontend/static & favicon.ico & \\
+\hline
 
+frontend/pages& CongressMemberListView.vue & Web frontend\\
+& LoginView & \\
+& PlenarySessionBySeriesView.vue & \\
+& ProfileView.vue & \\
+& SignUpView.vue & \\
+& SubscriberListView.vue & \\
+& index.vue & \\
+\hline
+frontend/pages/  UnifiedSearch & \_keywords.vue & Web frontend \\
+& \_name.vue  & \\
+\hline
+frontend/pages/  ViewDialogue & \_typeRoundTime.vue & Web frontend \\
+\hline
 backend& .classpath & Backend \\
 & .project.js & \\
 & .springBeans & \\
 & pom.xml & \\
-\hline
-backend/.setting& org.eclipse.core.resources.prefs & Backend \\
-& org.eclipse.jdt.core.prefs & \\
-& org.eclipse.m2e.core.prefs & \\
-& org.eclipse.wst.common.com & \\
-& ... & \\
+
 \hline
 \end{tabular}
 \label{tab1}
@@ -693,8 +699,14 @@ backend/.setting& org.eclipse.core.resources.prefs & Backend \\
 \begin{center}
 \begin{tabular}{|p{2.5cm}|p{3.7cm}|p{1.5cm}|}
 \hline
+backend/.setting& org.eclipse.core.resources.prefs & Backend \\
+& org.eclipse.jdt.core.prefs & \\
+& org.eclipse.m2e.core.prefs & \\
+& org.eclipse.wst.common.com & \\
+& ... & \\
+\hline
+
 backend/target& classes/ & Backend \\
-& classes/ & \\
 & m2e-wtp/web-resources/META-INF & \\
 & test-classes/ & \\
 \hline
@@ -710,10 +722,9 @@ backend/src/main/ webapp/WEB-INF& spring/ & Backend \\
  & views/ &\\
 & web.xml & \\
 \hline
-backend/src/mainjava/  org/factfinder/controller& HomeController.java & Backend \\
-& PoliticController.java & \\
-& SampleController.java & \\
-& SampleControllerTests.java & \\
+backend/src/mainjava/  org/factfinder/controller& NUGUController.java & Backend \\
+& WebController.java & \\
+
 \hline
 backend/src/main/java/  org/factfinder/mapper& PoliticMapper.java & Backend \\
 & PoliticMapperTest.java & \\
@@ -724,8 +735,8 @@ backend/src/main/java/  org/factfinder/service& PoliticService.java & Backend \\
 backend/src/main/ java/org/factfinder/vo & AgendaVO.java & Backend \\
 &DialogueVO.java & \\
 &MinuteVO.java & \\
-&SampleVO.java & \\
-&ticket.java & \\
+&UserVO.java & \\
+&PoliticianVO.java & \\
 \hline
 docs/ & fact\_finder.pdf & documentation \\
 & fact\_finder.tex & \\
@@ -737,10 +748,11 @@ docs/ & fact\_finder.pdf & documentation \\
 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=70mm,scale=0.5]{fig/overall.png}}
+\centerline{\includegraphics[width=60mm,scale=0.5]{fig/overall.png}}
 \caption{Overall directory organization}
 \label{fig}
 \end{figure}
+
 
 
 \subsection{Module 1: Web Frontend}
@@ -796,7 +808,7 @@ Third, The structure of the web front should be developed quickly. Our current p
 \subsection{Module 1.b: NUGU speaker frontend}
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_7.png}}
-\caption{Web Directory organization}
+\caption{NUGU speaker workflowef w}
 \label{fig}
 \end{figure}
 
@@ -841,13 +853,12 @@ Third, The structure of the web front should be developed quickly. Our current p
 We used NUGU play builder because through this we can easily make prototype of AI intercommunicating speaker platform. Also, the client, SKT, demanded to make a complete system that have a potential of commercializing.\\
   \end{enumerate}
  
- 
- \vspace{50mm}
+ \clearpage
  
   \subsection{Module 2: Backend}
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_6.png}}
-\caption{Module 1: Backend}
+\caption{Backend}
 \label{fig}
 \end{figure}
 
@@ -906,23 +917,13 @@ For that purposes, We used Spring framework, that is based on Java language. The
 \\
  \end{enumerate}
  
- 
-\item \textit {API controller: }  \
-
-\begin{enumerate}
-\item \textit {Method1: }If the front controller send information of specific meeting’s id number, it returns specific meeting and number of meeting to the front controller
-\item \textit {Method2: } If the front controller send information of meeting or meeting number, Return specific agenda and discussion to the front controller
-\item \textit {Method3: }  If the front controller send information of specific meeting’s id number, it returns politician’s name and his party to the front controller
-\item \textit {Method4: }  If the front controller send information of politician’s name, it returns specific meeting information and discussion to the front controller
-\\
- \end{enumerate}
  \end{enumerate}  
  
    \item \textit{Where it is taken from: } The Spring is the open source application framework for Java platform. The source code of Spring of Spring is in “https://github.com/spring-projects/spring-framework” and we used this package into our project for our purpose. We build API controller, NUGU controller, Web controller through this package and add pages to refine our functions.\\
   \item \textit{How and Why we use it: } We will use Spring framework and we will build Spring MVC pattern for our purpose. In our project, Vue.js is used for View part. Also, the database will be built on Elasticsearch software. The elasticsearch give and takes information on json format. So our back-end controller will be built like RESTful to change preexistence model domain roles to HTTP json protocol to communicate with our database. Furthermore, the Web controller and NUGU controller is built on Restful because the front-ends are also communicate with RESTfully, and it gives universality and unity to overall structure. The controllers in our Spring framework will provide responses with refined data on user requests.\\
   \end{enumerate}
+\clearpage
 
-  \vspace{250mm}
 
   \subsection{Module 3: Database(Elasticsearch)}
 \begin{figure}[htbp]
@@ -1023,8 +1024,126 @@ For that purposes, We used Spring framework, that is based on Java language. The
    
   \item \textit{How and Why we use it: } In first step, the hwp files are downloaded mannually by hands.This step will be converted further to be upgraded by crawlling data. Then, Operate hwp to text function should be processed to convert hwp format to text format, and text preprocessor converts text format to json format. Along with this steps, the congress member list preprocessor function also be operated to convert politician list excel files to json format. Finally, Operating the data upload function upoloads the json format data to Elasticsearch Database. The Elasticsearch database is updated based on NoSQL, so the data should be converted to json format to save to Database. So we should have to use this module to convert data to json format by exquisitely refining.\\
   \end{enumerate}
+
+\vspace{300mm}
+ \section{Use cases}
+\subsection{Use cases for Public}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/image9.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+\begin{enumerate}
+
+\item \textit {Use case 1 Before going into the main service: } User can meet our main page if the user get through our URL. They can use our web service even if they don’t want to log-in. If the user want to log in, they can just click log-in button above our web page. This page navigate to our specific functions  through our the big buttons centered in our page. Also through the navigation bar above, user can choose what function to use.
+ \\
+ 
+ \begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/AfterLoginUsecase.png}}
+\caption{after login usecases}
+\label{fig}
+\end{figure}
+
+\item \textit{Use case 2 Sign-up and Log-in: } In the log-in page, User can Sign-up, Log-in. If the user logged in, he can saves specific politicians or interested keywords individually. subscribed politician, interested keywords are saved in back-end server. through this, the user can uses subscribe or registering functions.\\
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+
+\begin{enumerate}
+    \item\textit{Log-in page is a first page that users can see when they enter to our website. The user have to fill out their e-mail and password in this page.  If username and password are match to our database, user can log in our web page to use our personalized system. If users succeed to log in, they can be identified through the internal identifying process so that they can move into the main page . Although, they bump into the failure message if the password is wrong. Meanwhile, user can use our web service without Login. In this case, they can use our service without our “subscribing function of interested politician. Also they can choose “Sign up button” to get into the sign up page  if they want to sign up to our service.
+} \\
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+
+    \item \textit{Sign up requires user to users’ information  such as E-mail, nickname, password, password confirm. After the user signed up, they can log-in into our web service. They can use our service without login. In this case, they can't use our service without our “subscribing function of interested politician.} \\
+    
+    
+    \begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+
+
+        \item \textit{In the profile page, user can change their nickname, password if they want. The changed information are stored in our database.} \\
+\end{enumerate}
+
+
+\item \textit{Use case 3 Looking up function about meeting contents per agenda:} They can use our Looking up function about subscribing politicians without log-in.\\
+
+\begin{enumerate}
+    \item\textit{Looking up list of assembly minutes:} \\
+    \item \textit{Looking up list of agendas per specific assembly minutes:} \\
+        \item \textit{ILooking up dialogue of specific agenda:} \\
+\end{enumerate}
+
+\item \textit{Use case 4 Looking up function about politician list: } In this page, user can view politician list. If the user select the number of assembly members, they can view the member of that specific number of assembly. User can view current members of assembly along with they are belonged to. If user click a member, they can move onto the page that politician’s agenda list that he was participated. in other words, This page is connected to as a separated function as third below, “Looking up  function about politician’s speech according to agenda”.
+If user want to follow specific politician what they did in assembly  on and on, they can click subscribe button in the member box. In this case, user can check what they saved in the function, “Looking up function about subscribing politics”. This function is activated only if the user was logged in.\\
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+
+
+\item \textit{Use case 5  Looking up function about politician’s speech according to agenda:}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+
+
+ If user selected or searched to specific politician, they can view this page. In this page, User can see specific politician’s participated agenda. Each table is consisted of the name of the assembly minutes, and details are filled with that politician’s participated agenda. If user wants to view what they spoke specifically at that agenda, they can click the pointing down arrow button. the pop-up box shows the politician’s speech, and its content is the whole minutes of that agenda.
+ If user wants to follow specific politician what they did in assembly on and on, they can click subscribe button in the member box. In this case, user can check what they saved in the fourth function, “Looking up function about subscribing politics”. This function is activated only if the user was logged in.\\
+
+\item \textit{Use case 6 Looking up function about subscribing politicians:}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
+
+
+ User can subscribe user’s interested politicians. In this page, user can customize this page by subscribing specific politicians functions implemented above. They can choose their favorite politicians. If the user click the “Looking up minutes” green button,  they can move onto the third function, “Looking up  function about politician’s' speech according to agenda”. Also, if user want to unsubscribe politician, he can click the red button, “unsubscribe” function is activated and the politician disappear in this page.\\
+
+
+ \item \textit{Use case 7 Searching real speech of the politician function:} 
+ 
+ \begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/6_10.png}}
+\caption{Parser directory organization}
+\label{fig}
+\end{figure}
  
  
+ This function is useful if the user wants to judge article’s quotation is true or not. User can search the facts in the minutes data, by filling out the search bar. If the user copy quotation in the article and paste in the search bar, they can click the search button. \
+ 
+ 
+ \begin{enumerate}
+    \item\textit{This function is useful if the user wants to judge article’s quotation is true or not. User can search the facts in the minutes data, by filling out the search bar. If the user copy quotation in the article and paste in the search bar, they can click the search button.} \\
+    \item \textit{ If then, what the politician actually said is popped out below with name of the assembly minutes, and agenda when he said at. Furthermore, the user can search keywords that he was interested and anything what he was curious about the politics and the searched result will be shown if the input words are related to the our data.} \\
+\end{enumerate}
+
+\end{enumerate}
  
 \end{document}
 
