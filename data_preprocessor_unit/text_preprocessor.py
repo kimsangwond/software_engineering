@@ -67,11 +67,11 @@ def extract_data(file_path: Path) -> tuple:
             agenda_list = list()
             discussion_paragraph_list = list()
             agendas = ''.join(paragraph_contents[0])
-            discussion_paragraph = ''.join(paragraph_contents[1:])
+            discussion_paragraph = '\n'.join(paragraph_contents[1:])
             # 마이크 중단으로 누적된 단락이 있을 경우
             if temporary_agenda_discussion_paragraph:
                 agenda_list.append(''.join(temporary_agenda_discussion_paragraph[0]))
-                discussion_paragraph_list.append(''.join(temporary_agenda_discussion_paragraph[1:]))
+                discussion_paragraph_list.append('\n'.join(temporary_agenda_discussion_paragraph[1:]))
                 temporary_agenda_discussion_paragraph.clear()
             # 단락 내 안건이나 토론 내용이 없으면 버립니다.
             if agendas and discussion_paragraph:
