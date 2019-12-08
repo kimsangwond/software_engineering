@@ -14,7 +14,7 @@
                 {{ congressMember.name }}
               </b-card-text>
               <b-button 
-                :to="{name: 'UnifiedSearch-name', params: {name: congressMember.name}}" 
+                :to="{name: 'UnifiedSearch-twoParams', params: {keyword: congressMember.name}}" 
                 class="mr-4" 
                 variant="success"
                 >
@@ -37,10 +37,7 @@
     },
     methods: {
       cancleSubscribe: function(name) {
-        this.$store.dispatch('cancleSubscribe', {name})
-          .then(() => {
-            this.subcribedCongressMemberList = this.$store.state.subscriberList            
-          })
+        this.$store.dispatch('cancleSubscribe', name)
       },
     }
   }

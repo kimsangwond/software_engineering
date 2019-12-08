@@ -24,6 +24,6 @@ module.exports = {
       }
     },
     vendor: ["axios"]
-  }
+  },
+  loading: '@/components/Loading.vue'
 }
-
