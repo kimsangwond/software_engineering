@@ -18,7 +18,7 @@
           <b-nav-item-dropdown text="검색" right>
             <b-dropdown-item to="/AgendaSearchView">안건 검색</b-dropdown-item>
             <b-dropdown-item to="/DiscussionSearchView">발언 검색</b-dropdown-item>
-            <b-dropdown-item to="/CongressMemberSearchView">국회의원으로 검색</b-dropdown-item>
+            <b-dropdown-item to="/CongressMemberSearch">국회의원으로 검색</b-dropdown-item>
           </b-nav-item-dropdown>
 				</b-navbar-nav>
 				<b-navbar-nav class="ml-auto">

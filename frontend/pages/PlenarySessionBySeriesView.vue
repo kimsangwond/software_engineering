@@ -4,20 +4,24 @@
 			<ordinal-list @interface="setSelectedOrdinal" :selectedOrdinal="selectedOrdinal"></ordinal-list>
 		</div>
 		<div class="col-md-10 offset-md-1 mt-4" v-if="selectedOrdinal">
-			<meeting-log-list :selectedOrdinal="selectedOrdinal" :searchType="searchType"></meeting-log-list>
+			<meeting-log-list-by-series 
+				:selectedOrdinal="selectedOrdinal" 
+				:searchType="searchType"
+				>
+			</meeting-log-list-by-series>
 		</div>
 	</div>
 </template>
 
 <script>
 	import OrdinalList from '@/components/OrdinalList.vue'
-	import MeetingLogList from '@/components/MeetingLogList.vue'
+	import MeetingLogListBySeries from '@/components/MeetingLogListBySeries.vue'
 	import { URL } from "@/assets/config.js"
 
 	export default {
 		layout:  'HeaderLayout',
 		components: {
-			MeetingLogList,
+			MeetingLogListBySeries,
 			OrdinalList,
 		},
 		data: function() {
