@@ -14,13 +14,23 @@
                 {{ congressMember.name }}
               </b-card-text>
               <b-button 
-                :to="{name: 'UnifiedSearch-name', params: {name: congressMember.name}}" 
-                class="mr-4" 
+                @click="searchByName(congressMember.name, 'agenda')"
                 variant="success"
                 >
-                회의록 검색
+                안건 검색
               </b-button>
-              <b-button @click="cancleSubscribe(congressMember.name)" variant="danger">구독 취소</b-button>
+              <b-button
+                @click="searchByName(congressMember.name, 'discussion')"
+                variant="success"
+                >
+                발언 검색
+              </b-button>
+              <b-button 
+                @click="cancleSubscribe(congressMember.name)" 
+                variant="danger"
+                >
+                구독 취소
+              </b-button>
           </b-card>
         </b-card-group>
       </b-card>
@@ -37,10 +47,14 @@
     },
     methods: {
       cancleSubscribe: function(name) {
-        this.$store.dispatch('cancleSubscribe', {name})
-          .then(() => {
-            this.subcribedCongressMemberList = this.$store.state.subscriberList            
-          })
+        this.$store.dispatch('cancleSubscribe', name)
+      },
+      searchByName: function(name, searchType) {
+        let args = `${name}-${searchType}`
+        this.$router.push({
+          name: 'CongressMemberSearch-nameChoice',
+          params: {nameChoice: args}
+        })
       },
     }
   }

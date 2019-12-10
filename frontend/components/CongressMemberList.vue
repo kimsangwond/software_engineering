@@ -7,12 +7,20 @@
                 :items="congressMemberList" 
                 :fields="fields" 
                 >
-                <template v-slot:cell(searchButton)="row">
+                <template v-slot:cell(searchByAgenda)="row">
                     <b-button 
                         size="sm" 
-                        :to="{name: 'UnifiedSearch-name', params: {name: row.item.name}}" 
+                  @click="searchByAgenda(row.item.name)"
                         class="mr-1">
-                        회의록 찾기
+                        {{ row.item.name }} 국회의원 발의 안건찾기
+                    </b-button>
+                </template>
+                <template v-slot:cell(searchByDiscussion)="row">
+                    <b-button 
+                        size="sm" 
+                  @click="searchByDiscussion(row.item.name)"
+                        class="mr-1">
+                        {{ row.item.name }} 국회의원 발언 찾기
                     </b-button>
                 </template>
                 <template v-slot:cell(subscribeButton)="row">
@@ -48,8 +56,13 @@
                         sortable: true
                     },
                     {
-                        key: 'searchButton',
-                        label: '발언 검색하기',
+                        key: 'searchByAgenda',
+                        label: '안건 찾기',
+                        sortable: false
+          },
+                    {
+                        key: 'searchByDiscussion',
+                        label: '발언 검색',
                         sortable: false
                     },
                     {
@@ -65,19 +78,35 @@
             selectedOrdinal: {
                 immediate: true,
                 handler: async function(newOrdinal) {
+                    this.$nuxt.$loading.start()
                     this.congressMemberList = await axios.get(
                         URL + '/congressMember',
                         {params: {ordinal: this.selectedOrdinal}}
                     ).then((res) => {
                         return res.data.member_info_list
                     })
+                    this.$nuxt.$loading.finish()
                 }
             }
         },
         methods: {
             subscribeMember: function(item) {
-                //vuex에 기능추가할 것   
-            }
+            this.$store.dispatch('startSubscribe', item)
+        },
+            searchByAgenda: function(name) {
+        let args = `${name}-agenda`
+        this.$router.push({
+          name: 'CongressMemberSearch-nameChoice', 
+          params: {nameChoice: args}
+        })
+        },
+        searchByDiscussion: function(name) {
+        let args = `${name}-discussion`
+        this.$router.push({
+          name: 'CongressMemberSearch-nameChoice', 
+          params: {nameChoice: args}
+        })
+      }	
         }
     }      
 </script>
