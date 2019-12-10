@@ -78,12 +78,14 @@
             selectedOrdinal: {
                 immediate: true,
                 handler: async function(newOrdinal) {
+                    this.$nuxt.$loading.start()
                     this.congressMemberList = await axios.get(
                         URL + '/congressMember',
                         {params: {ordinal: this.selectedOrdinal}}
                     ).then((res) => {
                         return res.data.member_info_list
                     })
+                    this.$nuxt.$loading.finish()
                 }
             }
         },

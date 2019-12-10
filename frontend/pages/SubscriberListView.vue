@@ -52,7 +52,7 @@
       searchByName: function(name, searchType) {
         let args = `${name}-${searchType}`
         this.$router.push({
-          name: 'CongressMemberSearchVue-nameChoice',
+          name: 'CongressMemberSearch-nameChoice',
           params: {nameChoice: args}
         })
       },
