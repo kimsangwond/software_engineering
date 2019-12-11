@@ -75,8 +75,8 @@
         ).then((res) => {
           return res.data.result
         })
-        this.isSearch = true
         this.$nuxt.$loading.finish()
+        this.isSearch = true
       },
       viewDialogue: function(dialogueInfo) {
         this.$router.push({
