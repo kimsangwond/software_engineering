@@ -36,11 +36,10 @@
       }
     },
     watch: {
-      results: {
+      searchResults: {
         immediate: true,
         handler(newValue) {
           this.results = newValue
-          this.$forceUpdate()
         }
       }
     },
