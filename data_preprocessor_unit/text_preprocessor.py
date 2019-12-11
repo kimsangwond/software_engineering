@@ -15,7 +15,8 @@ class PlenarySessionLog:
             "_type": "_doc",
             "_id": int, #차수
             "_source": {
-                "dialogue": list()
+                "agenda": list(),
+                "discussion": list()
             }
         }
 
@@ -31,47 +32,62 @@ class PlenarySessionPreProcessor:
     @classmethod
     def process_plenary_session(cls, file_path: Path, output_path: Path):
         result = cls.construct_plenary_session_format(file_path)
-        for plenary_session_log in construct_data(file_path):
-            result.contents["_source"]["dialogue"].append(plenary_session_log)
+        for agenda, discussion in extract_data(file_path):
+            result.contents["_source"]["agenda"].extend(agenda)
+            result.contents["_source"]["discussion"].extend(discussion)
         export_json(result, file_path, output_path)
 
-def parse_agenda_list(agendas: str) -> list:
-    return [agenda for agenda in agendas.split("\n") if agenda]
+def is_stop_by_timeover(speaking: str) -> bool:
+    if '마이크 중단' in speaking:
+        return False
+    else:
+        return True
 
-def parse_data(raw_data: str) -> tuple:
-    data = raw_data.replace("\n\n","").split("<그림>")
-    for agenda_discussion_paragraph in data:
-        if "◯" in agenda_discussion_paragraph:
-            paragraph_contents = agenda_discussion_paragraph.split("◯")
-            agenda_list = parse_agenda_list(paragraph_contents[0])
-            discussion_paragraph = paragraph_contents[1:]
-            yield (agenda_list, discussion_paragraph)
+def parse_data(file_path: Path) -> tuple:
+    raw_data = file_path.read_text(encoding="utf-8")
+    #전자투표 또는 참석자 명단 뒷 부분 제거
+    if "산회" in raw_data:
+        #개회식이 아닌 경우
+        splited_data = raw_data.split("산회)")
+        raw_data = splited_data[0]
+    elif "폐식" in raw_data:
+        #개회식인 경우
+        splited_data = raw_data.split("폐식)")
+        raw_data = splited_data[0]
+    #안건 및 토의 단락별로 나누기
+    return raw_data.replace("\n\n","").split("<그림>")
 
-def extract_data(raw_data: str) -> tuple:
-    temporary_discussion_paragraph = list()## 발언 초과로 인해 잘리는 경우를 위해서
-    temporary_agenda_list = list()
-    for agenda_discussion_paragraph in parse_data(raw_data):
-        agenda_list,discussion = agenda_discussion_paragraph
-        if agenda_list:
-            temporary_agenda_list = agenda_list # 안건들이 들어있다.
-            temporary_discussion_paragraph = discussion # 안건에 대한 토론 내용이 담겨있다.
-            yield (temporary_agenda_list, temporary_discussion_paragraph)
+def extract_data(file_path: Path) -> tuple:
+    temporary_agenda_discussion_paragraph = list()
+    for agenda_discussion_paragraph in parse_data(file_path):
+        #발화자가 말하는 단락 별로 나누기
+        paragraph_contents = agenda_discussion_paragraph.split("◯")
+        ## 마이크 중단으로 인해 잘리는 경우를 방지
+        if paragraph_contents and all(map(is_stop_by_timeover, paragraph_contents)):
+            agenda_list = list()
+            discussion_paragraph_list = list()
+            agendas = ''.join(paragraph_contents[0])
+            discussion_paragraph = '\n'.join(paragraph_contents[1:])
+            # 마이크 중단으로 누적된 단락이 있을 경우
+            if temporary_agenda_discussion_paragraph:
+                agenda_list.append(''.join(temporary_agenda_discussion_paragraph[0]))
+                discussion_paragraph_list.append('\n'.join(temporary_agenda_discussion_paragraph[1:]))
+                temporary_agenda_discussion_paragraph.clear()
+            # 단락 내 안건이나 토론 내용이 없으면 버립니다.
+            if agendas and discussion_paragraph:
+                agenda_list.append(agendas)
+                discussion_paragraph_list.append(discussion_paragraph)
+            # 누적된 발언이나 새로운 하나의 단락이 있을 경우 return
+            if agenda_list and discussion_paragraph_list:
+                yield (agenda_list, discussion_paragraph_list)
         else:
-            temporary_discussion_paragraph.extend(discussion) #토론만 들어있다.
-
-def construct_data(file_path: Path) -> dict:
-    for agenda_list, discussion_paragraph in extract_data(file_path.read_text()):
-        meeting_log = {
-            "agenda": agenda_list,
-            "discussion": discussion_paragraph
-        }
-        yield meeting_log
+            temporary_agenda_discussion_paragraph.extend(paragraph_contents)
 
 def name_json_file(file_path: Path):
     file_name = file_path.name
     return file_name.replace(".txt",".json")    
 
-def export_json(result: list, source_path: Path, output_path: Path):
+def export_json(result: PlenarySessionLog, source_path: Path, output_path: Path):
     file_name = name_json_file(source_path)
     export_path = output_path/Path(file_name)
     with export_path.open(mode="a+", encoding="utf-8") as f: 
@@ -79,7 +95,7 @@ def export_json(result: list, source_path: Path, output_path: Path):
         index = json.dump(document["contents"], fp=f, ensure_ascii=False)
 
 def run_preprocessor(partial_file_name: str, klass):
-    pattern = "*" + partial_file_name + "*"
+    pattern = "*" + partial_file_name + "*.txt"
     with Pool() as mp:
         mp.starmap(
             klass.process_plenary_session, 
