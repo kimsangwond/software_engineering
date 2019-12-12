@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+ \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{multirow,makecell}
@@ -1036,7 +1036,7 @@ For that purposes, We used Spring framework, that is based on Java language. The
  \\
  
   \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase1.jpg}}
+\centerline{\includegraphics[width=80mm,scale=0.5]{fig/usecase1.jpg}}
 \caption{Overall Log-in workflow}
 \label{fig}
 \end{figure}
@@ -1060,7 +1060,7 @@ For that purposes, We used Spring framework, that is based on Java language. The
 } \\
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase4.png}}
+\centerline{\includegraphics[width=80mm,scale=0.5]{fig/usecase4.png}}
 \caption{Sign-up}
 \label{fig}
 \end{figure}
@@ -1084,44 +1084,70 @@ For that purposes, We used Spring framework, that is based on Java language. The
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase6.png}}
-\caption{Looking up function about meeting contents per agenda}
+\caption{Looking up list of assembly minutes}
 \label{fig}
 \end{figure}
 
 
 \begin{enumerate}
-    \item\textit{Looking up list of assembly minutes:} \\
-    \item \textit{Looking up list of agendas per specific assembly minutes:} \\
-        \item \textit{Looking up dialogue of specific agenda:} \\
+    \item\textit{Looking up list of assembly minutes:} it shows assembly minutes list. Minutes list that is classified periodically includes monthly, weekly, and certain time period setting function. Because of this, user can search the record of the past and view minutes in certain date. The minutes are classified by kinds of minutes. The kinds are like, "The main session of state affairs, standing committees, special committees, confirmation hearings, subcommittees, parliamentary audits, public hearings, hearings and joint meetings"\\
+    
+    \clearpage
+    
+    \begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase7.png}}
+\caption{Looking up list of agendas per specific assembly minutes}
+\label{fig}
+\end{figure}
+    
+    \item \textit{Looking up list of agendas per specific assembly minutes:}  It consists of each minutes’ count number and agendas. In the big table, it shows each count number, specifically, each table contains what agendas are discussed in that congress meeting. If user wants to search specific agenda, he can just view that  by clicking that agenda.\\
+    
+    
+    \begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase8.png}}
+\caption{Looking up dialogue of specific agenda}
+\label{fig}
+\end{figure}
+    
+    
+    
+        \item \textit{Looking up dialogue of specific agenda:} it shows detail page that belonged to chosen agenda by the user. It looks like social messenger, talking each other like shown above. Specifically, The politician’s image is attached and his or her speech is surrounded in a box. One single page is not finish until specific agenda is over.\\
 \end{enumerate}
 
-
+\vspace{100mm}
 
 
 
 \item \textit{Use case 4 Looking up function about politician list: } 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase7.png}}
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase6.png}}
 \caption{Looking up function about politician list(1)}
 \label{fig}
 \end{figure}
 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase8.png}}
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase9.png}}
 \caption{Looking up function about politician list(2)}
 \label{fig}
 \end{figure}
+
 In this page, user can view politician list. If the user select the number of assembly members, they can view the member of that specific number of assembly. User can view current members of assembly along with they are belonged to. If user click a member, they can move onto the page that politician’s agenda list that he was participated. in other words, This page is connected to as a separated function as third below, “Looking up  function about politician’s speech according to agenda”.
 If user want to follow specific politician what they did in assembly  on and on, they can click subscribe button in the member box. In this case, user can check what they saved in the function, “Looking up function about subscribing politics”. This function is activated only if the user was logged in.\\
 
-
+\clearpage
 
 \item \textit{Use case 5  Looking up function about politician’s speech according to agenda:}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase9.png}}
-\caption{Looking up function about politician's speech according to agenda}
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase10.png}}
+\caption{Looking up function about politician's speech according to agenda(1)}
+\label{fig}
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase11.png}}
+\caption{Looking up function about politician's speech according to agenda(2)}
 \label{fig}
 \end{figure}
 
@@ -1129,27 +1155,35 @@ If user want to follow specific politician what they did in assembly  on and on,
  If user selected or searched to specific politician, they can view this page. In this page, User can see specific politician’s participated agenda. Each table is consisted of the name of the assembly minutes, and details are filled with that politician’s participated agenda. If user wants to view what they spoke specifically at that agenda, they can click the pointing down arrow button. the pop-up box shows the politician’s speech, and its content is the whole minutes of that agenda.
  If user wants to follow specific politician what they did in assembly on and on, they can click subscribe button in the member box. In this case, user can check what they saved in the fourth function, “Looking up function about subscribing politics”. This function is activated only if the user was logged in.\\
 
+\vspace{100mm}
+
+
+
 \item \textit{Use case 6 Looking up function about subscribing politicians:}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase10.png}}
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase12.png}}
 \caption{Looking up function about subscribing politicians}
 \label{fig}
 \end{figure}
 
 
+
+
  User can subscribe user’s interested politicians. In this page, user can customize this page by subscribing specific politicians functions implemented above. They can choose their favorite politicians. If the user click the “Looking up minutes” green button,  they can move onto the third function, “Looking up  function about politician’s' speech according to agenda”. Also, if user want to unsubscribe politician, he can click the red button, “unsubscribe” function is activated and the politician disappear in this page.\\
 
-
+\clearpage
  \item \textit{Use case 7 Searching real speech of the politician function:} 
  
  \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase11.png}}
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase13.png}}
 \caption{Searchng real speech of the politican function(1)}
 \label{fig}
 \end{figure}
+
+
   \begin{figure}[htbp]
-\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase12.png}}
+\centerline{\includegraphics[width=90mm,scale=0.5]{fig/usecase14.png}}
 \caption{Searchng real speech of the politican function(2)}
 \label{fig}
 \end{figure}
@@ -1163,5 +1197,23 @@ If user want to follow specific politician what they did in assembly  on and on,
 \end{enumerate}
 
 \end{enumerate}
- 
+
+\vspace{20mm}
+
+\section{discussion}
+
+We have been working on the project for over three months. We looked at our ideas and looked for other examples that could be used to implement our ideas and designed and implemented our own apps. Since it was the first time to implement the software in person, there were many mistakes and many times we made a lot of mistakes and often spent time in inefficiencies. 
+\vspace{6mm}
+Especially for the first time using elastic search and vue.js, it was very hard. But by using and exploiting a new type of software called ElasticSearch, I learned how to learn about new technologies and how to communicate restfully. But I think we are well worth it for our own implementation of the software, and we learned a lot in the process. We think that these processes are like taking the first step in becoming a software engineer later on and will help us a lot in the future.
+\vspace{6mm}
+
+I hope many people have easy access to politics through our project and are interested in politics. This situation is particularly unfortunate because it is active abroad but there are no related activities in Korea. Our team will further improve our program for these activities.
+
+
+\vspace{15mm}
+Github repository:
+\vspace{3mm}
+
+https://github.com/kimsangwond/software\_engineering
+
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  5 DEC 2019 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  11 DEC 2019 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -560,6 +560,21 @@ LaTeX Warning: Label `tab1' multiply defined.
 
 
 LaTeX Warning: Label `tab1' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
 
 
 LaTeX Warning: Label `fig' multiply defined.
@@ -2066,122 +2081,182 @@ Underfull \vbox (badness 6396) has occurred while \output is active []
  [23 <./fig/6_9.png> <./fig/6_10.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1033.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1041
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1037
 
  []
 
-<fig/AfterLoginUsecase.png, id=152, 574.145pt x 399.4925pt>
-File: fig/AfterLoginUsecase.png Graphic file (type png)
-<use fig/AfterLoginUsecase.png>
-Package pdftex.def Info: fig/AfterLoginUsecase.png  used on input line 1043.
+<fig/usecase1.jpg, id=152, 580.1675pt x 640.3925pt>
+File: fig/usecase1.jpg Graphic file (type jpg)
+<use fig/usecase1.jpg>
+Package pdftex.def Info: fig/usecase1.jpg  used on input line 1039.
+(pdftex.def)             Requested size: 290.08302pt x 320.19547pt.
+<fig/usecase2.png, id=153, 574.145pt x 399.4925pt>
+File: fig/usecase2.png Graphic file (type png)
+<use fig/usecase2.png>
+Package pdftex.def Info: fig/usecase2.png  used on input line 1045.
 (pdftex.def)             Requested size: 287.0718pt x 199.74576pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1049
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1051
 
  []
 
-[24 <./fig/AfterLoginUsecase.png>]
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1051.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
+[24 <./fig/usecase1.jpg> <./fig/usecase2.png>]
+<fig/usecase3.png, id=158, 1686.3pt x 1053.9375pt>
+File: fig/usecase3.png Graphic file (type png)
+<use fig/usecase3.png>
+Package pdftex.def Info: fig/usecase3.png  used on input line 1053.
+(pdftex.def)             Requested size: 843.14795pt x 526.96747pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
-
- []
-
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1061.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1066--1067
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
 
  []
 
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1070.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
+<fig/usecase4.png, id=159, 1686.3pt x 1053.9375pt>
+File: fig/usecase4.png Graphic file (type png)
+<use fig/usecase4.png>
+Package pdftex.def Info: fig/usecase4.png  used on input line 1063.
+(pdftex.def)             Requested size: 843.14795pt x 526.96747pt.
 
-Underfull \hbox (badness 3482) in paragraph at lines 1076--1077
+Underfull \hbox (badness 10000) in paragraph at lines 1068--1069
+
+ []
+
+<fig/usecase5.png, id=160, 1880.02374pt x 896.34875pt>
+File: fig/usecase5.png Graphic file (type png)
+<use fig/usecase5.png>
+Package pdftex.def Info: fig/usecase5.png  used on input line 1072.
+(pdftex.def)             Requested size: 940.00958pt x 448.17328pt.
+
+Underfull \hbox (badness 3482) in paragraph at lines 1078--1079
 []\OT1/ptm/m/it/10 In the pro-file page, user can change their
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1076--1077
+Underfull \hbox (badness 10000) in paragraph at lines 1078--1079
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1080--1081
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1083
+
+ []
+
+<fig/usecase6.png, id=161, 1798.72pt x 930.47626pt>
+File: fig/usecase6.png Graphic file (type png)
+<use fig/usecase6.png>
+Package pdftex.def Info: fig/usecase6.png  used on input line 1086.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+
+Underfull \hbox (badness 5637) in paragraph at lines 1093--1094
+\OT1/ptm/m/n/10 as-sem-bly min-utes list. Min-utes list that is
+ []
+
+
+Underfull \hbox (badness 7814) in paragraph at lines 1093--1094
+\OT1/ptm/m/n/10 com-mit-tees, spe-cial com-mit-tees, con-fir-ma-tion
+ []
+
+
+Underfull \hbox (badness 3364) in paragraph at lines 1093--1094
+\OT1/ptm/m/n/10 hear-ings, sub-com-mit-tees, par-lia-men-tary au-dits,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1094
+
+ []
+
+[25 <./fig/usecase3.png> <./fig/usecase4.png> <./fig/usecase5.png> <./fig/useca
+se6.png>]
+<fig/usecase7.png, id=170, 1798.72pt x 930.47626pt>
+File: fig/usecase7.png Graphic file (type png)
+<use fig/usecase7.png>
+Package pdftex.def Info: fig/usecase7.png  used on input line 1098.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1103--1104
+
+ []
+
+<fig/usecase8.png, id=171, 1798.72pt x 930.47626pt>
+File: fig/usecase8.png Graphic file (type png)
+<use fig/usecase8.png>
+Package pdftex.def Info: fig/usecase8.png  used on input line 1107.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: fig/usecase6.png Graphic file (type png)
+<use fig/usecase6.png>
+Package pdftex.def Info: fig/usecase6.png  used on input line 1123.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+<fig/usecase9.png, id=172, 1798.72pt x 930.47626pt>
+File: fig/usecase9.png Graphic file (type png)
+<use fig/usecase9.png>
+Package pdftex.def Info: fig/usecase9.png  used on input line 1130.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1135--1137
+
+ []
+
+[26
+
+ <./fig/usecase7.png> <./fig/usecase8.png> <./fig/usecase9.png>]
+<fig/usecase10.png, id=179, 1798.72pt x 930.47626pt>
+File: fig/usecase10.png Graphic file (type png)
+<use fig/usecase10.png>
+Package pdftex.def Info: fig/usecase10.png  used on input line 1143.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+<fig/usecase11.png, id=180, 1798.72pt x 930.47626pt>
+File: fig/usecase11.png Graphic file (type png)
+<use fig/usecase11.png>
+Package pdftex.def Info: fig/usecase11.png  used on input line 1149.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1155--1157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1084--1085
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<fig/usecase12.png, id=181, 1798.72pt x 930.47626pt>
+File: fig/usecase12.png Graphic file (type png)
+<use fig/usecase12.png>
+Package pdftex.def Info: fig/usecase12.png  used on input line 1165.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1173--1174
+
+ []
+
+[27
+
+ <./fig/usecase10.png> <./fig/usecase11.png> <./fig/usecase12.png>]
+<fig/usecase13.png, id=188, 1798.72pt x 930.47626pt>
+File: fig/usecase13.png Graphic file (type png)
+<use fig/usecase13.png>
+Package pdftex.def Info: fig/usecase13.png  used on input line 1179.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+<fig/usecase14.png, id=189, 1798.72pt x 930.47626pt>
+File: fig/usecase14.png Graphic file (type png)
+<use fig/usecase14.png>
+Package pdftex.def Info: fig/usecase14.png  used on input line 1186.
+(pdftex.def)             Requested size: 899.3578pt x 465.23698pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1088--1090
-
- []
-
-[25]
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1092.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1099.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1108.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1114--1116
-
- []
-
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1120.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
-
- []
-
-[26]
-File: fig/6_10.png Graphic file (type png)
-<use fig/6_10.png>
-Package pdftex.def Info: fig/6_10.png  used on input line 1132.
-(pdftex.def)             Requested size: 90.93951pt x 73.47432pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1142--1143
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1143--1144
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
 
  []
 
@@ -2196,18 +2271,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[27
+[28
 
-] (./fact_finder.aux)
+ <./fig/usecase13.png> <./fig/usecase14.png>] (./fact_finder.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4864 strings out of 492616
- 71320 string characters out of 6129481
+ 4916 strings out of 492616
+ 72435 string characters out of 6129481
  175929 words of memory out of 5000000
- 8701 multiletter control sequences out of 15000+600000
+ 8753 multiletter control sequences out of 15000+600000
  39583 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,12n,35p,1118b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2216,10 +2291,10 @@ exlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on fact_finder.pdf (27 pages, 5169382 bytes).
+Output written on fact_finder.pdf (28 pages, 49463655 bytes).
 PDF statistics:
- 183 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 211 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
