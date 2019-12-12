@@ -23,7 +23,10 @@
   .overlay-loading{
     position: absolute;
     top: 50%;
-    font-size: 50px;
+    left: 50%;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     color: white;
   }
 </style>
