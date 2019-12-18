@@ -104,6 +104,7 @@ def run_preprocessor(partial_file_name: str, klass):
     print("finish")
 
 if __name__=="__main__":
+    print('주의! 생성하려는 파일과 같은 이름의 파일이 있을 경우에 append합니다.')
     preprocessor_type = input("전처리기의 유형을 선택하세요:\n")
     if preprocessor_type == "plenary_session":
         run_preprocessor(preprocessor_type, PlenarySessionPreProcessor)
