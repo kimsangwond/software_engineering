@@ -29,6 +29,7 @@ def convert_plenary_session():
     print("finish")
 
 if __name__=="__main__":
+    print('주의! 생성하려는 파일과 같은 이름의 파일이 있을 경우에 append합니다.')
     converter_type = input("컨버터의 유형을 선택하세요:\n")
     if converter_type == "plenary_session":
         convert_plenary_session()

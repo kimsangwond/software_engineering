@@ -46,7 +46,7 @@ export const actions = {
 	login({ commit }, req ) {
 		Object.defineProperties(req, {
 			nickName: {
-				value: '운영자',
+				value: '황인준',
 				writable: true,
 			},
 			subscriberList: {
@@ -56,7 +56,7 @@ export const actions = {
 						party: '더불어민주당'
 					},
 					{
-						name: '홍준표',
+						name: '나경원',
 						party: '자유한국당'
 					}
 				],

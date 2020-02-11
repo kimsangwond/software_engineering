@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoading">
+  <div v-if="isLoading" class="text-center">
     <b-button size="lg" variant="primary" disabled class="overlay-loading">
       <b-spinner type="grow"></b-spinner>
       검색중입니다!
@@ -23,9 +23,10 @@
   .overlay-loading{
     position: absolute;
     top: 50%;
-    font-size: 50px;
+    left: 50%;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     color: white;
-    transform: translate(-20%,-20%);
-    -ms-transform: translate(-20%,-20%);
   }
 </style>

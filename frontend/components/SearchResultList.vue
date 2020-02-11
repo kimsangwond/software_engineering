@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 col-md-10 offset-md-1">
+  <div class="mt-5 col-md-10 offset-md-1" v-if="results">
     <b-card :header="searchTypeName + ' 검색결과'">
       <b-list-group>
         <b-list-group-item 
@@ -20,6 +20,11 @@
       </b-list-group>
     </b-card>
   </div>
+  <div v-else>
+    <b-card>
+      {{ searchTypeName }} 검색 결과가 없습니다.
+    </b-card>
+  </div>
 </template>
 
 <script>
@@ -36,11 +41,10 @@
       }
     },
     watch: {
-      results: {
+      searchResults: {
         immediate: true,
         handler(newValue) {
           this.results = newValue
-          this.$forceUpdate()
         }
       }
     },
