@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  11 DEC 2019 20:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.10.2)  12 DEC 2019 16:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2273,7 +2273,9 @@ Before submitting the final camera ready copy, remember to:
 
 [28
 
- <./fig/usecase13.png> <./fig/usecase14.png>] (./fact_finder.aux)
+ <./fig/usecase13.png> <./fig/usecase14.png>] [29
+
+] (./fact_finder.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -2291,10 +2293,10 @@ exlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on fact_finder.pdf (28 pages, 49463655 bytes).
+Output written on fact_finder.pdf (29 pages, 49464686 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 214 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
